@@ -15,8 +15,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqrp4"]
-size = Vector2(512, 330)
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqrp4"]
+radius = 178.16425
 
 [node name="WorldCamera" type="Camera2D" unique_id=1470264754]
 limit_left = -3840
@@ -44,4 +44,4 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLayer/Camera_Anim/Area2D" unique_id=1959688132]
 position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_nqrp4")
+shape = SubResource("CircleShape2D_nqrp4")

@@ -2,9 +2,29 @@ extends AnimatedSprite2D
 
 @onready var camera_hitbox: Area2D = $Area2D
 
+var overlapped_areas: Array[Node2D] = []
+var brightness_modifier = 0.5
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
+	
+	camera_hitbox.area_entered.connect(_on_area_entered)
+	camera_hitbox.area_exited.connect(_on_area_exited)
+
+func _on_area_entered(node: Node2D):
+	if node is not CreatureHitbox: return;
+	var creature: Creature = node.get_parent()
+	if creature.is_captured: return;
+	overlapped_areas.append(creature)
+	creature.modulate = Color(1 + brightness_modifier, 1 + brightness_modifier, 1 + brightness_modifier, 1.0)
+
+func _on_area_exited(node: Node2D):
+	if node is not CreatureHitbox: return;
+	var creature: Creature = node.get_parent()
+	if creature.is_captured: return;
+	overlapped_areas.erase(creature)
+	creature.modulate = Color.WHITE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -23,8 +43,9 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			var areas = camera_hitbox.get_overlapping_areas();
 			for node in areas:
-				if node is not Area2D: 
+				if node is not CreatureHitbox: 
 					continue
-				print(node.to_string() + " was captured by the camera!")
-				if node.has_method("_when_clicked"):
+				var creature: Creature = node.get_parent()
+				print(creature.to_string() + " was captured by the camera!")
+				if creature.has_method("_when_clicked"):
 					node._when_clicked();

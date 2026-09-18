@@ -1,7 +1,9 @@
 @tool
 extends AnimatedSprite2D
+class_name Creature
 
 @onready var collision_shape: CollisionShape2D = $Hitbox/CollisionShape2D
+@onready var hitbox: CreatureHitbox = $Hitbox
 
 @export var is_cryptid: bool = false
 @export var wait_low: int = 4
@@ -16,15 +18,21 @@ extends AnimatedSprite2D
 	set(value):
 		collision_size = value
 		_update_collision()
+
+var is_captured: bool = false;
 		
 func _update_collision():
-	collision_shape.position = collision_position
+	if !collision_shape: 
+		collision_shape = $Hitbox/CollisionShape2D
+	collision_shape.position.x = collision_position.x
+	collision_shape.position.y = collision_position.y
 	var shape = collision_shape.shape
 	if shape is not RectangleShape2D: return
 	shape.size = collision_size
 
 func _when_clicked() -> void:
-	modulate = Color.GREEN
+	modulate = Color.RED if is_cryptid else Color.GREEN
+	is_captured = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -32,10 +40,11 @@ func _process(_delta: float) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
 	# Avoid gameplay logic in-editor
 	if Engine.is_editor_hint():
 		return
+		
+	hitbox.captured.connect(_when_clicked);
 		
 	await get_tree().create_timer(randi_range(1,3)).timeout
 	anim_loop()

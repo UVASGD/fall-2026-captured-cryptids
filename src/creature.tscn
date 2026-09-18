@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://4crq2uruj6rt"]
+
+[ext_resource type="Script" uid="uid://cucmkc5fhe7ng" path="res://src/creature.gd" id="1_oq0kc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0oq0"]
+resource_local_to_scene = true
+size = Vector2(10, 10)
+
+[node name="CreatureAnimatedSprite2D" type="AnimatedSprite2D" unique_id=1541800983]
+texture_filter = 1
+scale = Vector2(8, 8)
+script = ExtResource("1_oq0kc")
+collision_position = null
+collision_size = null
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1430666836]
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1763225228]
+shape = SubResource("RectangleShape2D_i0oq0")

@@ -17,7 +17,8 @@ func _on_area_entered(node: Node2D):
 	var creature: Creature = node.get_parent()
 	if creature.is_captured: return;
 	overlapped_areas.append(creature)
-	creature.modulate = Color(1 + brightness_modifier, 1 + brightness_modifier, 1 + brightness_modifier, 1.0)
+	if visible:
+		creature.modulate = Color(1 + brightness_modifier, 1 + brightness_modifier, 1 + brightness_modifier, 1.0)
 
 func _on_area_exited(node: Node2D):
 	if node is not CreatureHitbox: return;
@@ -33,6 +34,16 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("camera"): 
 		visible = !visible
 		GameManager._camera_open = visible
+		if !visible:
+			for node in overlapped_areas:
+				if node is not Creature: 
+					continue
+				node.modulate = Color.WHITE
+		else:
+			for node in overlapped_areas:
+				if node is not Creature: 
+					continue
+				node.modulate = Color(1 + brightness_modifier, 1 + brightness_modifier, 1 + brightness_modifier, 1.0)
 
 	var camera = get_viewport().get_camera_2d()
 	if camera:
@@ -43,9 +54,8 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			var areas = camera_hitbox.get_overlapping_areas();
 			for node in areas:
-				if node is not CreatureHitbox: 
+				if node is not Creature: 
 					continue
-				var creature: Creature = node.get_parent()
-				print(creature.to_string() + " was captured by the camera!")
-				if creature.has_method("_when_clicked"):
-					creature._when_clicked();
+				print(node.to_string() + " was captured by the camera!")
+				if node.has_method("_when_clicked"):
+					node._when_clicked();

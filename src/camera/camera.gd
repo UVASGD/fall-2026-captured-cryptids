@@ -48,4 +48,4 @@ func _input(event):
 				var creature: Creature = node.get_parent()
 				print(creature.to_string() + " was captured by the camera!")
 				if creature.has_method("_when_clicked"):
-					node._when_clicked();
+					creature._when_clicked();

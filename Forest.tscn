@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cdybxvc8s8si6" path="res://Game Manager.gd" id="1_n5rn3"]
 [ext_resource type="Script" uid="uid://dlcbh40cfvktj" path="res://journal.gd" id="5_j4pel"]
-[ext_resource type="Script" uid="uid://c4srd40i6klaq" path="res://src/camera/main_cam_background.gd" id="6_iqxea"]
 [ext_resource type="Texture2D" uid="uid://2wjh3w5825qo" path="res://Art_Assets/Journal_Placeholder.png" id="6_mtk2u"]
 [ext_resource type="Texture2D" uid="uid://bbqx8d1ttcrvb" path="res://Art_Assets/Pause_Menu_Placeholder.png" id="7_4weo8"]
 [ext_resource type="Script" uid="uid://cqhlktevebqoj" path="res://pause_menu.gd" id="8_adj1i"]
@@ -10,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bhqtbki340m5p" path="res://leave_game_button.gd" id="9_vfnn3"]
 [ext_resource type="Script" uid="uid://btptcqouq05cx" path="res://settings_button.gd" id="10_adj1i"]
 [ext_resource type="Script" uid="uid://dx2jljqarn24q" path="res://return_to_game_button.gd" id="11_01kxy"]
+[ext_resource type="Script" uid="uid://clc8i8xmkd1nq" path="res://src/camera/parallax.gd" id="11_2vh4v"]
 [ext_resource type="PackedScene" uid="uid://4crq2uruj6rt" path="res://src/creature/creature.tscn" id="12_kf2k2"]
 [ext_resource type="Texture2D" uid="uid://cseeqtnmfygp2" path="res://Art_Assets/BG_No_Grid.png" id="13_swn5c"]
 [ext_resource type="Texture2D" uid="uid://dogyfi7di0xsg" path="res://Art_Assets/Deer [Normal]/deer_regular_0000.png" id="13_x7us8"]
@@ -346,10 +346,12 @@ follow_viewport_enabled = true
 
 [node name="Main_BG_Anim" type="AnimatedSprite2D" parent="Main Background" unique_id=498925440]
 texture_filter = 1
-scale = Vector2(8, 8)
+position = Vector2(4.5, 0)
+scale = Vector2(8.009375, 8)
 sprite_frames = SubResource("SpriteFrames_ddm7e")
 animation = &"main_bg draft"
-script = ExtResource("6_iqxea")
+script = ExtResource("11_2vh4v")
+parallax_amount = 0.2
 
 [node name="Deer1" parent="Main Background" unique_id=1430666836 instance=ExtResource("12_kf2k2")]
 position = Vector2(-2125, 153)
@@ -377,3 +379,4 @@ collision_position = Vector2(-0.6, 0)
 collision_size = Vector2(5.28, 5.69)
 
 [node name="MainCamera" parent="." unique_id=1470264754 instance=ExtResource("75_c8yhr")]
+limit_right = 3828

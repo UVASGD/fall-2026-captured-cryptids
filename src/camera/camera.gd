@@ -52,8 +52,7 @@ func _process(_delta: float) -> void:
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			var areas = camera_hitbox.get_overlapping_areas();
-			for node in areas:
+			for node in overlapped_areas:
 				if node is not Creature: 
 					continue
 				print(node.to_string() + " was captured by the camera!")

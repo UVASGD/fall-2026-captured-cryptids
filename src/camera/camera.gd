@@ -38,10 +38,14 @@ func _process(_delta: float) -> void:
 			for node in overlapped_areas:
 				if node is not Creature: 
 					continue
+				if node.is_captured: 
+					continue
 				node.modulate = Color.WHITE
 		else:
 			for node in overlapped_areas:
 				if node is not Creature: 
+					continue
+				if node.is_captured: 
 					continue
 				node.modulate = Color(1 + brightness_modifier, 1 + brightness_modifier, 1 + brightness_modifier, 1.0)
 

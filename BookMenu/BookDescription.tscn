@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bph5nw84lkabl"]
+
+[ext_resource type="Script" uid="uid://4sp48qrtputl" path="res://BookMenu/book_description.gd" id="1_yv7hq"]
+[ext_resource type="Texture2D" uid="uid://dhyj2ixkvaj72" path="res://BookMenu/Book_Placeholder.jpeg" id="2_x78gs"]
+[ext_resource type="Texture2D" uid="uid://dmsgc8sogbnpg" path="res://BookMenu/Deer_Placeholder.png" id="3_3dpog"]
+
+[node name="Node2D" type="Node2D" unique_id=1462901952]
+script = ExtResource("1_yv7hq")
+
+[node name="Control" type="Control" parent="." unique_id=537601810]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1020.56256
+offset_top = 626.99994
+offset_right = 1060.5625
+offset_bottom = 666.99994
+
+[node name="EvilBook" type="Button" parent="Control" unique_id=129447956]
+modulate = Color(6.4262276, 0, 18.04701, 1)
+self_modulate = Color(1.2108967, 1.2108967, 1.2108967, 1)
+layout_mode = 0
+offset_left = -289.56256
+offset_top = -586.99994
+offset_right = 215.43744
+offset_bottom = -466.99994
+theme_override_font_sizes/font_size = 62
+text = "Evil Animals"
+
+[node name="Label" type="Label" parent="Control" unique_id=753140209]
+layout_mode = 0
+offset_left = -538.56256
+offset_top = -342.99994
+offset_right = -74.56256
+offset_bottom = -224.99994
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label2" type="Label" parent="Control" unique_id=852466032]
+layout_mode = 0
+offset_left = 66.43744
+offset_top = -366.99994
+offset_right = 554.43744
+offset_bottom = -173.99994
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Button" type="Button" parent="Control" unique_id=341188809]
+layout_mode = 0
+offset_left = -545.56256
+offset_top = 236.00006
+offset_right = -401.29504
+offset_bottom = 330.00006
+scale = Vector2(1.2546139, 1)
+text = "BACK"
+
+[node name="Screenshot20260919At6_53_35Pm" type="Sprite2D" parent="." unique_id=1360147682]
+z_index = -2
+position = Vector2(1020.56256, 627.9999)
+scale = Vector2(4.0277343, 4.6806283)
+texture = ExtResource("2_x78gs")
+
+[node name="DeerPlaceholder" type="Sprite2D" parent="." unique_id=2019959409]
+position = Vector2(710.00006, 612.99994)
+scale = Vector2(0.3609831, 0.3601134)
+texture = ExtResource("3_3dpog")
+
+[connection signal="pressed" from="Control/EvilBook" to="." method="_on_evil_book_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

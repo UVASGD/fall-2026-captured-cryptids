@@ -16,5 +16,6 @@ func _process(_delta):
 		return
 
 	var camera_offset = camera.global_position - camera_start_position
+	camera_offset.y -= camera_offset.y
 
 	global_position = start_position + camera_offset * parallax_amount

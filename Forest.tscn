@@ -351,7 +351,7 @@ scale = Vector2(8.009375, 8)
 sprite_frames = SubResource("SpriteFrames_ddm7e")
 animation = &"main_bg draft"
 script = ExtResource("11_2vh4v")
-parallax_amount = 0.2
+parallax_amount = 0.1
 
 [node name="Deer1" parent="Main Background" unique_id=1430666836 instance=ExtResource("12_kf2k2")]
 position = Vector2(-2125, 153)

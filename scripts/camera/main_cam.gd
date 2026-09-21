@@ -21,30 +21,19 @@ func _process(delta: float) -> void:
 	if GameManager.ui_block: return
 
 	# Keyboard input
-	if Input.is_action_pressed("ui_right"):
-		if !GameManager.camera_open:
-			dir.x += 1
-	if Input.is_action_pressed("ui_left"):
-		if !GameManager.camera_open:
-			dir.x -= 1
-	if Input.is_action_pressed("ui_down"):
-		if !GameManager.camera_open:
-			dir.y += 1
-	if Input.is_action_pressed("ui_up"):
-		if !GameManager.camera_open:
-			dir.y -= 1
+	if Input.is_action_pressed("pan_right"):
+		dir.x += 1
+	if Input.is_action_pressed("pan_left"):
+		dir.x -= 1
+	if Input.is_action_pressed("pan_down"):
+		dir.y += 1
+	if Input.is_action_pressed("pan_up"):
+		dir.y -= 1
+		
 	# Keyboard movement
 	if dir != Vector2.ZERO:
 		target += dir.normalized() * follow_speed_keys * delta
-	# Cursor input
-	elif follow_speed_cursor > 0:
-		if GameManager.camera_open:
-			var screen_center := get_viewport_rect().size * 0.5
-			var cursor := get_viewport().get_mouse_position()
-			var pos_offset := cursor - screen_center
-			if pos_offset.length() > 10.0:
-				# Cursor movement
-				target += pos_offset.normalized() * follow_speed_cursor * delta
+		
 	# Horizontal wrap
 	target.x = wrapf(target.x, WRAP_LEFT, WRAP_RIGHT)
 	# Vertical clamp

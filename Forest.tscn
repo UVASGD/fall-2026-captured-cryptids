@@ -1,17 +1,16 @@
-[gd_scene format=3 uid="uid://cibq2nnnxmgl"]
+[gd_scene format=3 uid="uid://dvsohssc1b114"]
 
-[ext_resource type="Script" uid="uid://cdybxvc8s8si6" path="res://Game Manager.gd" id="1_n5rn3"]
-[ext_resource type="Script" uid="uid://dlcbh40cfvktj" path="res://journal.gd" id="5_j4pel"]
+[ext_resource type="Script" uid="uid://cdybxvc8s8si6" path="res://scripts/game_manager.gd" id="1_n5rn3"]
+[ext_resource type="Script" uid="uid://dlcbh40cfvktj" path="res://scripts/journal.gd" id="5_j4pel"]
 [ext_resource type="Texture2D" uid="uid://2wjh3w5825qo" path="res://Art_Assets/Journal_Placeholder.png" id="6_mtk2u"]
 [ext_resource type="Texture2D" uid="uid://bbqx8d1ttcrvb" path="res://Art_Assets/Pause_Menu_Placeholder.png" id="7_4weo8"]
-[ext_resource type="Script" uid="uid://cqhlktevebqoj" path="res://pause_menu.gd" id="8_adj1i"]
+[ext_resource type="Script" uid="uid://cqhlktevebqoj" path="res://scripts/ui/pause_menu.gd" id="8_adj1i"]
 [ext_resource type="Texture2D" uid="uid://wbwrj682au44" path="res://icon.svg" id="8_vfnn3"]
-[ext_resource type="Script" uid="uid://bhqtbki340m5p" path="res://leave_game_button.gd" id="9_vfnn3"]
-[ext_resource type="Script" uid="uid://btptcqouq05cx" path="res://settings_button.gd" id="10_adj1i"]
-[ext_resource type="Script" uid="uid://dx2jljqarn24q" path="res://return_to_game_button.gd" id="11_01kxy"]
-[ext_resource type="Script" uid="uid://clc8i8xmkd1nq" path="res://src/camera/parallax.gd" id="11_2vh4v"]
-[ext_resource type="PackedScene" uid="uid://4crq2uruj6rt" path="res://src/creature/creature.tscn" id="12_kf2k2"]
-[ext_resource type="Texture2D" uid="uid://cseeqtnmfygp2" path="res://Art_Assets/BG_No_Grid.png" id="13_swn5c"]
+[ext_resource type="Script" uid="uid://bhqtbki340m5p" path="res://scripts/ui/leave_game_button.gd" id="9_vfnn3"]
+[ext_resource type="Script" uid="uid://btptcqouq05cx" path="res://scripts/ui/settings_button.gd" id="10_adj1i"]
+[ext_resource type="Script" uid="uid://dx2jljqarn24q" path="res://scripts/ui/return_to_game_button.gd" id="11_01kxy"]
+[ext_resource type="Texture2D" uid="uid://s3vbqxxh1mpw" path="res://Art_Assets/Background/BG_Draft_1_Top_Layer.png" id="12_hpon2"]
+[ext_resource type="PackedScene" uid="uid://4crq2uruj6rt" path="res://scenes/creature.tscn" id="12_kf2k2"]
 [ext_resource type="Texture2D" uid="uid://dogyfi7di0xsg" path="res://Art_Assets/Deer [Normal]/deer_regular_0000.png" id="13_x7us8"]
 [ext_resource type="Texture2D" uid="uid://bg2nrxn7vks17" path="res://Art_Assets/Deer [Normal]/deer_regular_0001.png" id="14_n5rn3"]
 [ext_resource type="Texture2D" uid="uid://bjo4dn53gdhcs" path="res://Art_Assets/Deer [Normal]/deer_regular_0002.png" id="15_g5a0l"]
@@ -66,7 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://ckuc6ftgahsg3" path="res://Art_Assets/Moth Bush/MothBush_0009.png" id="72_dwc3p"]
 [ext_resource type="Texture2D" uid="uid://c2seoj1vlhfxs" path="res://Art_Assets/Moth Bush/MothBush_0010.png" id="73_fixus"]
 [ext_resource type="Texture2D" uid="uid://bafkp8t0sja07" path="res://Art_Assets/Moth Bush/MothBush_0011.png" id="74_ycu5k"]
-[ext_resource type="PackedScene" uid="uid://dijtpgj3j3r2n" path="res://src/camera/main_camera.tscn" id="75_c8yhr"]
+[ext_resource type="PackedScene" uid="uid://dijtpgj3j3r2n" path="res://scenes/main_camera.tscn" id="75_c8yhr"]
 [ext_resource type="Texture2D" uid="uid://cp8aw0fw6rk3k" path="res://Art_Assets/Moth Bush/MothBush_0012.png" id="75_iomec"]
 [ext_resource type="Texture2D" uid="uid://dqrbtuk2rhn84" path="res://Art_Assets/Moth Bush/MothBush_0013.png" id="76_fbunq"]
 
@@ -95,16 +94,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ddm7e"]
-animations = [{
-"frames": [{
-"duration": 4.0,
-"texture": ExtResource("13_swn5c")
-}],
-"loop": true,
-"name": &"main_bg draft",
-"speed": 8.0
-}]
+[sub_resource type="CanvasTexture" id="CanvasTexture_cghdb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1mnp5"]
 animations = [{
@@ -298,7 +288,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=1296171585]
+[node name="GameRoot" type="Node2D" unique_id=1296171585]
 script = ExtResource("1_n5rn3")
 
 [node name="Journal" type="CanvasLayer" parent="." unique_id=426268938]
@@ -344,22 +334,43 @@ script = ExtResource("11_01kxy")
 layer = 0
 follow_viewport_enabled = true
 
-[node name="Main_BG_Anim" type="AnimatedSprite2D" parent="Main Background" unique_id=498925440]
-texture_filter = 1
-position = Vector2(4.5, 0)
-scale = Vector2(8.009375, 8)
-sprite_frames = SubResource("SpriteFrames_ddm7e")
-animation = &"main_bg draft"
-script = ExtResource("11_2vh4v")
-parallax_amount = 0.1
+[node name="Sprite2D2" type="Sprite2D" parent="Main Background" unique_id=64193604]
+modulate = Color(0.24705882, 0.24705882, 0.24705882, 1)
+position = Vector2(-201.49973, 4.5000305)
+scale = Vector2(7691.0005, 1263)
+texture = SubResource("CanvasTexture_cghdb")
 
-[node name="Deer1" parent="Main Background" unique_id=1430666836 instance=ExtResource("12_kf2k2")]
+[node name="Parallax2D2" type="Parallax2D" parent="Main Background" unique_id=561889001]
+scroll_scale = Vector2(0.4, 0.4)
+scroll_offset = Vector2(0, 200)
+repeat_size = Vector2(1500, 0)
+repeat_times = 10
+
+[node name="BackgroundLayer" type="Sprite2D" parent="Main Background/Parallax2D2" unique_id=1693913146]
+modulate = Color(0.5, 0.5, 0.5, 1)
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("12_hpon2")
+
+[node name="Parallax2D" type="Parallax2D" parent="Main Background" unique_id=2139034097]
+scroll_scale = Vector2(0.95, 0.95)
+repeat_times = 10
+
+[node name="ForegroundLayer" type="Sprite2D" parent="Main Background/Parallax2D" unique_id=1815421001]
+texture_filter = 1
+position = Vector2(-28, -7)
+scale = Vector2(8, 8)
+texture = ExtResource("12_hpon2")
+
+[node name="CreatureRoot" type="Node2D" parent="Main Background" unique_id=1254769416]
+
+[node name="Deer1" parent="Main Background/CreatureRoot" unique_id=1430666836 instance=ExtResource("12_kf2k2")]
 position = Vector2(-2125, 153)
 sprite_frames = SubResource("SpriteFrames_1mnp5")
 collision_position = Vector2(0.58, 0.31)
 collision_size = Vector2(8.46, 7.63)
 
-[node name="Deer2" parent="Main Background" unique_id=1862211854 instance=ExtResource("12_kf2k2")]
+[node name="Deer2" parent="Main Background/CreatureRoot" unique_id=1862211854 instance=ExtResource("12_kf2k2")]
 position = Vector2(-1289, 160)
 sprite_frames = SubResource("SpriteFrames_61gao")
 frame = 20
@@ -370,7 +381,7 @@ wait_high = 10
 collision_position = Vector2(0.43, 0.39)
 collision_size = Vector2(8.87, 7.99)
 
-[node name="MothBush" parent="Main Background" unique_id=561356661 instance=ExtResource("12_kf2k2")]
+[node name="MothBush" parent="Main Background/CreatureRoot" unique_id=561356661 instance=ExtResource("12_kf2k2")]
 position = Vector2(-2800, 251.89)
 sprite_frames = SubResource("SpriteFrames_s8oh3")
 wait_low = 2

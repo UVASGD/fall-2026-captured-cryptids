@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://4crq2uruj6rt"]
 
-[ext_resource type="Script" uid="uid://cucmkc5fhe7ng" path="res://src/creature/creature.gd" id="1_oq0kc"]
-[ext_resource type="Script" uid="uid://y6kk2buujbt0" path="res://src/creature/creature_hitbox.gd" id="2_mmtec"]
+[ext_resource type="Script" uid="uid://cucmkc5fhe7ng" path="res://scripts/creature/creature.gd" id="1_oq0kc"]
+[ext_resource type="Script" uid="uid://y6kk2buujbt0" path="res://scripts/creature/creature_hitbox.gd" id="2_mmtec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0oq0"]
 resource_local_to_scene = true

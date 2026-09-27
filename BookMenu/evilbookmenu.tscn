@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dqrg5m55aubu3"]
+
+[ext_resource type="Texture2D" uid="uid://dhyj2ixkvaj72" path="res://BookMenu/Book_Placeholder.jpeg" id="1_0uad7"]
+[ext_resource type="Script" uid="uid://4ytijpmu5r65" path="res://BookMenu/evilbookmenu.gd" id="1_fv5i2"]
+
+[node name="Node2D" type="Node2D" unique_id=632352899]
+script = ExtResource("1_fv5i2")
+
+[node name="Control" type="Control" parent="." unique_id=1520916274]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NormalBook" type="Button" parent="." unique_id=655875646]
+modulate = Color(10.015613, 6.2568603, 3.2379668, 1)
+self_modulate = Color(1.2108967, 1.2108967, 1.2108967, 1)
+offset_left = 731.0
+offset_top = 40.0
+offset_right = 1236.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 62
+text = "Normal Animals"
+
+[node name="Animal 1" type="Button" parent="." unique_id=910208696]
+offset_left = 1074.0
+offset_top = 202.0
+offset_right = 1312.0
+offset_bottom = 447.3316
+text = "Animal 1"
+
+[node name="Animal 2" type="Button" parent="." unique_id=1337637976]
+offset_left = 1341.0
+offset_top = 202.0
+offset_right = 1579.0
+offset_bottom = 447.3316
+text = "Animal 2"
+
+[node name="Animal 3" type="Button" parent="." unique_id=206283787]
+offset_left = 1074.0
+offset_top = 470.0
+offset_right = 1312.0
+offset_bottom = 715.3316
+text = "Animal 3"
+
+[node name="Animal 4" type="Button" parent="." unique_id=752821665]
+offset_left = 1341.0
+offset_top = 470.0
+offset_right = 1579.0
+offset_bottom = 715.3316
+text = "Animal 4"
+
+[node name="Animal 5" type="Button" parent="." unique_id=1093982842]
+offset_left = 1074.0
+offset_top = 733.0
+offset_right = 1312.0
+offset_bottom = 978.3316
+text = "Animal 5"
+
+[node name="Animal 6" type="Button" parent="." unique_id=1332834475]
+offset_left = 1341.0
+offset_top = 733.0
+offset_right = 1579.0
+offset_bottom = 978.3316
+text = "Animal 6"
+
+[node name="Screenshot20260919At6_53_35Pm" type="Sprite2D" parent="Animal 6" unique_id=601980251]
+modulate = Color(0.67058825, 0, 1, 1)
+z_index = -2
+position = Vector2(-329, -101)
+scale = Vector2(4.0277343, 4.6806283)
+texture = ExtResource("1_0uad7")
+
+[connection signal="pressed" from="NormalBook" to="." method="_on_normal_book_pressed"]

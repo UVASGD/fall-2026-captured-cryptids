@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dijtpgj3j3r2n"]
+
+[ext_resource type="Script" uid="uid://dlfbmln3nry5l" path="res://scripts/camera/main_cam.gd" id="1_nqrp4"]
+[ext_resource type="Script" uid="uid://dalovhlk2ocj" path="res://scripts/camera/camera.gd" id="2_h2pog"]
+[ext_resource type="Texture2D" uid="uid://cphs05ggyme04" path="res://Art_Assets/Camera_Placeholder.png" id="3_agi03"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_05hq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_agi03")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqrp4"]
+radius = 178.16425
+
+[node name="WorldCamera" type="Camera2D" unique_id=1470264754]
+limit_left = -3840
+limit_top = -540
+limit_right = 3840
+limit_bottom = 540
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+editor_draw_limits = true
+script = ExtResource("1_nqrp4")
+
+[node name="CameraLayer" type="CanvasLayer" parent="." unique_id=1481627917]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="Camera_Anim" type="AnimatedSprite2D" parent="CameraLayer" unique_id=1246582933]
+position = Vector2(953, 506)
+sprite_frames = SubResource("SpriteFrames_05hq6")
+script = ExtResource("2_h2pog")
+
+[node name="Area2D" type="Area2D" parent="CameraLayer/Camera_Anim" unique_id=1926033239]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLayer/Camera_Anim/Area2D" unique_id=1959688132]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("CircleShape2D_nqrp4")

@@ -1,22 +1,23 @@
-[gd_scene format=3 uid="uid://u8ckp73vichc"]
+[gd_scene format=3 uid="uid://cibq2nnnxmgl"]
 
-[ext_resource type="Script" uid="uid://dlfbmln3nry5l" path="res://scripts/camera/main_cam.gd" id="1_42iaq"]
-[ext_resource type="Script" uid="uid://cdybxvc8s8si6" path="res://scripts/game_manager.gd" id="1_n5rn3"]
-[ext_resource type="Script" uid="uid://dalovhlk2ocj" path="res://scripts/camera/camera.gd" id="2_h1ret"]
+[ext_resource type="Script" uid="uid://dlfbmln3nry5l" path="res://main_cam.gd" id="1_42iaq"]
+[ext_resource type="Script" uid="uid://cdybxvc8s8si6" path="res://Game Manager.gd" id="1_n5rn3"]
+[ext_resource type="Script" uid="uid://dalovhlk2ocj" path="res://Camera.gd" id="2_h1ret"]
 [ext_resource type="Texture2D" uid="uid://cphs05ggyme04" path="res://Art_Assets/Camera_Placeholder.png" id="3_05hq6"]
-[ext_resource type="PackedScene" uid="uid://dapvlr3gs0q5c" path="res://BookMenu/bookmenu.tscn" id="5_72mnj"]
-[ext_resource type="Script" uid="uid://dlcbh40cfvktj" path="res://scripts/journal.gd" id="5_j4pel"]
-[ext_resource type="Script" uid="uid://c4srd40i6klaq" path="res://scripts/main_cam_background.gd" id="6_iqxea"]
+[ext_resource type="Script" uid="uid://dlcbh40cfvktj" path="res://journal.gd" id="5_j4pel"]
+[ext_resource type="Script" uid="uid://c4srd40i6klaq" path="res://main_cam_background.gd" id="6_iqxea"]
+[ext_resource type="Texture2D" uid="uid://2wjh3w5825qo" path="res://Art_Assets/Journal_Placeholder.png" id="6_mtk2u"]
 [ext_resource type="Texture2D" uid="uid://bbqx8d1ttcrvb" path="res://Art_Assets/Pause_Menu_Placeholder.png" id="7_4weo8"]
-[ext_resource type="Script" uid="uid://cqhlktevebqoj" path="res://scripts/ui/pause_menu.gd" id="8_adj1i"]
+[ext_resource type="Script" uid="uid://cqhlktevebqoj" path="res://pause_menu.gd" id="8_adj1i"]
 [ext_resource type="Texture2D" uid="uid://wbwrj682au44" path="res://icon.svg" id="8_vfnn3"]
-[ext_resource type="Script" uid="uid://bhqtbki340m5p" path="res://scripts/ui/leave_game_button.gd" id="9_vfnn3"]
-[ext_resource type="Script" uid="uid://btptcqouq05cx" path="res://scripts/ui/settings_button.gd" id="10_adj1i"]
-[ext_resource type="Script" uid="uid://dx2jljqarn24q" path="res://scripts/ui/return_to_game_button.gd" id="11_01kxy"]
-[ext_resource type="Texture2D" uid="uid://cseeqtnmfygp2" path="res://Art_Assets/Background/BG_No_Grid.png" id="13_swn5c"]
+[ext_resource type="Script" uid="uid://bhqtbki340m5p" path="res://leave_game_button.gd" id="9_vfnn3"]
+[ext_resource type="Script" uid="uid://btptcqouq05cx" path="res://settings_button.gd" id="10_adj1i"]
+[ext_resource type="Script" uid="uid://dx2jljqarn24q" path="res://return_to_game_button.gd" id="11_01kxy"]
+[ext_resource type="Texture2D" uid="uid://cseeqtnmfygp2" path="res://Art_Assets/BG_No_Grid.png" id="13_swn5c"]
 [ext_resource type="Texture2D" uid="uid://dogyfi7di0xsg" path="res://Art_Assets/Deer [Normal]/deer_regular_0000.png" id="13_x7us8"]
 [ext_resource type="Texture2D" uid="uid://bg2nrxn7vks17" path="res://Art_Assets/Deer [Normal]/deer_regular_0001.png" id="14_n5rn3"]
 [ext_resource type="Texture2D" uid="uid://bjo4dn53gdhcs" path="res://Art_Assets/Deer [Normal]/deer_regular_0002.png" id="15_g5a0l"]
+[ext_resource type="Script" uid="uid://cucmkc5fhe7ng" path="res://deer_1_hitbox.gd" id="15_ia67n"]
 [ext_resource type="Texture2D" uid="uid://djwwyyhq8efgb" path="res://Art_Assets/Deer [Normal]/deer_regular_0003.png" id="16_fkfa4"]
 [ext_resource type="Texture2D" uid="uid://cwdk6jfvwxbkr" path="res://Art_Assets/Deer [Normal]/deer_regular_0004.png" id="17_8cgra"]
 [ext_resource type="Texture2D" uid="uid://bgii51as7q1ql" path="res://Art_Assets/Deer [Normal]/deer_regular_0005.png" id="18_2bvd2"]
@@ -35,9 +36,11 @@
 [ext_resource type="Texture2D" uid="uid://dpqtdgs05s67q" path="res://Art_Assets/Deer [Normal]/deer_regular_0018.png" id="31_ckjn4"]
 [ext_resource type="Texture2D" uid="uid://devau4dx0pwuw" path="res://Art_Assets/Deer [Normal]/deer_regular_0019.png" id="32_kf2k2"]
 [ext_resource type="Texture2D" uid="uid://ct2vwyi6xnul0" path="res://Art_Assets/Deer [Normal]/deer_regular_0020.png" id="33_0l6oi"]
+[ext_resource type="Script" uid="uid://cbnaa1osu4nl1" path="res://deer_norm_script.gd" id="34_4klwg"]
 [ext_resource type="Texture2D" uid="uid://px7f2fii5tak" path="res://Art_Assets/Deer [Cryptid]/deer_cryptid_0000.png" id="35_ortj3"]
 [ext_resource type="Texture2D" uid="uid://cyuwij7mmv18v" path="res://Art_Assets/Deer [Cryptid]/deer_cryptid_0001.png" id="36_h1ret"]
 [ext_resource type="Texture2D" uid="uid://hdipmvugurd1" path="res://Art_Assets/Deer [Cryptid]/deer_cryptid_0002.png" id="37_05hq6"]
+[ext_resource type="Script" uid="uid://cmye8wui12oad" path="res://deer_2_hitbox.gd" id="38_4kobs"]
 [ext_resource type="Texture2D" uid="uid://bj7ka1427sqii" path="res://Art_Assets/Deer [Cryptid]/deer_cryptid_0003.png" id="38_ia67n"]
 [ext_resource type="Texture2D" uid="uid://n08bt4yi4rvc" path="res://Art_Assets/Deer [Cryptid]/deer_cryptid_0004.png" id="39_66xu6"]
 [ext_resource type="Texture2D" uid="uid://cqjp0xds53acc" path="res://Art_Assets/Deer [Cryptid]/deer_cryptid_0005.png" id="40_4kobs"]
@@ -56,6 +59,9 @@
 [ext_resource type="Texture2D" uid="uid://cu68v5g00uqc4" path="res://Art_Assets/Deer [Cryptid]/deer_cryptid_0018.png" id="53_b1bqm"]
 [ext_resource type="Texture2D" uid="uid://bs6r8le0hdyvd" path="res://Art_Assets/Deer [Cryptid]/deer_cryptid_0019.png" id="54_vv028"]
 [ext_resource type="Texture2D" uid="uid://cew7kquqfjxjl" path="res://Art_Assets/Deer [Cryptid]/deer_cryptid_0020.png" id="55_6ufan"]
+[ext_resource type="Script" uid="uid://rqppovkaq8hx" path="res://deer_2_[c].gd" id="56_wofh8"]
+[ext_resource type="Script" uid="uid://d05lrjbaduo6g" path="res://deer_3_[c].gd" id="57_exa7f"]
+[ext_resource type="Script" uid="uid://dxvf7iudubwk5" path="res://deer_3_hitbox.gd" id="61_swn5c"]
 [ext_resource type="Texture2D" uid="uid://uwh7e42g2aad" path="res://Art_Assets/Moth Bush/MothBush_0000.png" id="63_vv028"]
 [ext_resource type="Texture2D" uid="uid://fe5fbx5wbqba" path="res://Art_Assets/Moth Bush/MothBush_0001.png" id="64_6ufan"]
 [ext_resource type="Texture2D" uid="uid://dg4o2k7k1t2f3" path="res://Art_Assets/Moth Bush/MothBush_0002.png" id="65_wofh8"]
@@ -70,13 +76,28 @@
 [ext_resource type="Texture2D" uid="uid://bafkp8t0sja07" path="res://Art_Assets/Moth Bush/MothBush_0011.png" id="74_ycu5k"]
 [ext_resource type="Texture2D" uid="uid://cp8aw0fw6rk3k" path="res://Art_Assets/Moth Bush/MothBush_0012.png" id="75_iomec"]
 [ext_resource type="Texture2D" uid="uid://dqrbtuk2rhn84" path="res://Art_Assets/Moth Bush/MothBush_0013.png" id="76_fbunq"]
-[ext_resource type="Texture2D" uid="uid://bvlmm4tergdve" path="res://Art_Assets/BG_Draft_1_Top_Layer.png" id="77_wofh8"]
+[ext_resource type="Script" uid="uid://b1eoyq60fdix0" path="res://m_bush.gd" id="77_6ufan"]
+[ext_resource type="Texture2D" uid="uid://bvlmm4tergdve" path="res://BG_Draft_1_Top_Layer.png" id="77_wofh8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_05hq6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_05hq6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ob1vx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_mtk2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4weo8")
 }],
 "loop": true,
 "name": &"default",
@@ -395,13 +416,15 @@ sprite_frames = SubResource("SpriteFrames_05hq6")
 [node name="Journal" type="CanvasLayer" parent="." unique_id=426268938]
 script = ExtResource("5_j4pel")
 
-[node name="Journal" parent="Journal" unique_id=2056271101 instance=ExtResource("5_72mnj")]
+[node name="Journal_Anim" type="AnimatedSprite2D" parent="Journal" unique_id=1851942433]
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_ob1vx")
 
 [node name="Pause Menu" type="CanvasLayer" parent="." unique_id=219764977]
 script = ExtResource("8_adj1i")
 
 [node name="Pause_Anim" type="AnimatedSprite2D" parent="Pause Menu" unique_id=780029556]
-position = Vector2(959, 539)
+position = Vector2(960, 540)
 scale = Vector2(0.620308, 0.34823373)
 sprite_frames = SubResource("SpriteFrames_k3d1m")
 
@@ -443,10 +466,12 @@ script = ExtResource("6_iqxea")
 [node name="Deer1 Hitbox" type="Area2D" parent="Main Background" unique_id=1886403718]
 position = Vector2(-2125, 153)
 scale = Vector2(8, 8)
+script = ExtResource("15_ia67n")
 
 [node name="Deer1N" type="AnimatedSprite2D" parent="Main Background/Deer1 Hitbox" unique_id=324177284]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_1mnp5")
+script = ExtResource("34_4klwg")
 
 [node name="Deer1 HB" type="CollisionShape2D" parent="Main Background/Deer1 Hitbox" unique_id=603863618]
 position = Vector2(5.0625, 3.3125)
@@ -454,12 +479,14 @@ shape = SubResource("RectangleShape2D_05hq6")
 
 [node name="Deer2 Hitbox" type="Area2D" parent="Main Background" unique_id=1795214627]
 position = Vector2(0, 82)
+script = ExtResource("38_4kobs")
 
 [node name="Deer2C" type="AnimatedSprite2D" parent="Main Background/Deer2 Hitbox" unique_id=1273900070]
 texture_filter = 1
 position = Vector2(-1230, 131)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_2k0t5")
+script = ExtResource("56_wofh8")
 
 [node name="Deer2 HB" type="CollisionShape2D" parent="Main Background/Deer2 Hitbox" unique_id=1234613666]
 position = Vector2(-1191.5, 152.75)
@@ -467,6 +494,7 @@ shape = SubResource("RectangleShape2D_ia67n")
 
 [node name="Deer3 Hitbox" type="Area2D" parent="Main Background" unique_id=2131340502]
 position = Vector2(0, -74)
+script = ExtResource("61_swn5c")
 
 [node name="Deer3C" type="AnimatedSprite2D" parent="Main Background/Deer3 Hitbox" unique_id=829281709]
 texture_filter = 1
@@ -474,6 +502,7 @@ position = Vector2(1886, 191)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_yegkk")
 flip_h = true
+script = ExtResource("57_exa7f")
 
 [node name="Deer3 HB" type="CollisionShape2D" parent="Main Background/Deer3 Hitbox" unique_id=270528316]
 position = Vector2(1846, 211)
@@ -486,6 +515,7 @@ texture_filter = 1
 position = Vector2(-3321, 270)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_s8oh3")
+script = ExtResource("77_6ufan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Main Background/Moth Bush" unique_id=813358946]
 position = Vector2(-3323.5, 271)
@@ -499,6 +529,7 @@ texture_filter = 1
 position = Vector2(-3321, 270)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_s8oh3")
+script = ExtResource("77_6ufan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Main Background/Moth Bush2" unique_id=1578108019]
 position = Vector2(-3323.5, 271)

@@ -450,7 +450,6 @@ layer = 0
 follow_viewport_enabled = true
 
 [node name="Main_BG_Anim" type="AnimatedSprite2D" parent="Main Background" unique_id=498925440]
-visible = false
 texture_filter = 1
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_ddm7e")
@@ -530,8 +529,8 @@ scale = Vector2(7691.0005, 1263)
 texture = SubResource("CanvasTexture_6ufan")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1601053304]
-modulate = Color(1.1110096, 1.1110096, 1.1110095, 1)
-scroll_scale = Vector2(0.5, 0.5)
+modulate = Color(0.04826486, 3.4721825e-06, 0.04951732, 1)
+scroll_scale = Vector2(0.4, 0.4)
 scroll_offset = Vector2(0, 200)
 repeat_size = Vector2(1500, 0)
 repeat_times = 10

@@ -1,29 +1,64 @@
 [gd_scene format=3 uid="uid://dapvlr3gs0q5c"]
 
 [ext_resource type="Script" uid="uid://b54h7106pdo2l" path="res://BookMenu/bookmenu.gd" id="1_am6ud"]
-[ext_resource type="Texture2D" uid="uid://dhyj2ixkvaj72" path="res://BookMenu/Book_Placeholder.jpeg" id="2_op5li"]
+[ext_resource type="Texture2D" uid="uid://dhyj2ixkvaj72" path="res://BookMenu/Journal_Placeholder.jpeg" id="2_op5li"]
+[ext_resource type="Texture2D" uid="uid://dgsqvfd03lx7y" path="res://BookMenu/RightArrow_placeholder.jpeg" id="3_d42ad"]
+[ext_resource type="Texture2D" uid="uid://dmsgc8sogbnpg" path="res://BookMenu/Deer_Placeholder.png" id="3_kk17l"]
+[ext_resource type="Texture2D" uid="uid://crc1fcuqn1ux4" path="res://BookMenu/AnimalPlaceholder.jpg" id="4_ma4mm"]
 
-[node name="Node2D" type="Node2D" unique_id=2056271101]
+[node name="Journal" type="Node2D" unique_id=2056271101]
 script = ExtResource("1_am6ud")
 
-[node name="Control" type="Control" parent="." unique_id=811960900]
+[node name="JournalPlaceholder" type="Sprite2D" parent="." unique_id=1115377318]
+z_index = -2
+position = Vector2(1020.56256, 626.99994)
+scale = Vector2(4.0277343, 4.6806283)
+texture = ExtResource("2_op5li")
+
+[node name="PageTraversal" type="Control" parent="." unique_id=1888898136]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="EvilBook" type="Button" parent="Control" unique_id=431683715]
-modulate = Color(6.4262276, 0, 18.04701, 1)
-self_modulate = Color(1.2108967, 1.2108967, 1.2108967, 1)
+[node name="BackButton" type="TextureButton" parent="PageTraversal" unique_id=2057379504]
 layout_mode = 0
-offset_left = 731.0
-offset_top = 40.0
-offset_right = 1236.0
-offset_bottom = 160.0
-theme_override_font_sizes/font_size = 62
-text = "Evil Animals"
+offset_left = 463.00006
+offset_top = 213.99994
+offset_right = 1059.0
+offset_bottom = 548.99994
+scale = Vector2(0.3008553, 0.28154972)
+texture_normal = ExtResource("3_d42ad")
 
-[node name="Animal 1" type="Button" parent="Control" unique_id=1150353382]
+[node name="Before Page" type="Button" parent="PageTraversal" unique_id=473250912]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 871.0
+offset_right = 618.2676
+offset_bottom = 965.0
+scale = Vector2(1.2546139, 1)
+text = "Before
+"
+
+[node name="Next Page" type="Button" parent="PageTraversal" unique_id=1673962561]
+layout_mode = 0
+offset_left = 1412.0
+offset_top = 871.0
+offset_right = 1556.2676
+offset_bottom = 965.0
+scale = Vector2(1.2546139, 1)
+text = "Next
+"
+
+[node name="TableOfContents" type="Control" parent="." unique_id=811960900]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Animal 1" type="Button" parent="TableOfContents" unique_id=1150353382]
 layout_mode = 0
 offset_left = 1074.0
 offset_top = 202.0
@@ -31,7 +66,7 @@ offset_right = 1312.0
 offset_bottom = 447.3316
 text = "Animal 1"
 
-[node name="Animal 2" type="Button" parent="Control" unique_id=692568959]
+[node name="Animal 2" type="Button" parent="TableOfContents" unique_id=692568959]
 layout_mode = 0
 offset_left = 1341.0
 offset_top = 202.0
@@ -39,7 +74,7 @@ offset_right = 1579.0
 offset_bottom = 447.3316
 text = "Animal 2"
 
-[node name="Animal 3" type="Button" parent="Control" unique_id=477329331]
+[node name="Animal 3" type="Button" parent="TableOfContents" unique_id=477329331]
 layout_mode = 0
 offset_left = 1074.0
 offset_top = 470.0
@@ -47,7 +82,7 @@ offset_right = 1312.0
 offset_bottom = 715.3316
 text = "Animal 3"
 
-[node name="Animal 4" type="Button" parent="Control" unique_id=2018806742]
+[node name="Animal 4" type="Button" parent="TableOfContents" unique_id=2018806742]
 layout_mode = 0
 offset_left = 1341.0
 offset_top = 470.0
@@ -55,7 +90,7 @@ offset_right = 1579.0
 offset_bottom = 715.3316
 text = "Animal 4"
 
-[node name="Animal 5" type="Button" parent="Control" unique_id=582087793]
+[node name="Animal 5" type="Button" parent="TableOfContents" unique_id=582087793]
 layout_mode = 0
 offset_left = 1074.0
 offset_top = 733.0
@@ -63,7 +98,7 @@ offset_right = 1312.0
 offset_bottom = 978.3316
 text = "Animal 5"
 
-[node name="Animal 6" type="Button" parent="Control" unique_id=372092819]
+[node name="Animal 6" type="Button" parent="TableOfContents" unique_id=372092819]
 layout_mode = 0
 offset_left = 1341.0
 offset_top = 733.0
@@ -71,11 +106,346 @@ offset_right = 1579.0
 offset_bottom = 978.3316
 text = "Animal 6"
 
-[node name="Screenshot20260919At6_53_35Pm" type="Sprite2D" parent="." unique_id=1115377318]
-z_index = -2
-position = Vector2(1020.56256, 626.99994)
-scale = Vector2(4.0277343, 4.6806283)
-texture = ExtResource("2_op5li")
+[node name="Control" type="Control" parent="." unique_id=1104602152]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[connection signal="pressed" from="Control/EvilBook" to="." method="evil_menu_pressed"]
-[connection signal="pressed" from="Control/Animal 1" to="." method="_on_animal_1_pressed"]
+[node name="AnimalPage1" type="Control" parent="." unique_id=1761436742]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1020.56256
+offset_top = 626.99994
+offset_right = 1060.5625
+offset_bottom = 666.99994
+
+[node name="Label" type="Label" parent="AnimalPage1" unique_id=1132142618]
+layout_mode = 0
+offset_left = -538.56256
+offset_top = -329.99994
+offset_right = -74.56256
+offset_bottom = -211.99994
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label4" type="Label" parent="AnimalPage1" unique_id=450195385]
+layout_mode = 0
+offset_left = 73.43744
+offset_top = -329.99994
+offset_right = 537.43744
+offset_bottom = -211.99994
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label2" type="Label" parent="AnimalPage1" unique_id=1279856330]
+layout_mode = 0
+offset_left = -538.56256
+offset_top = 159.00006
+offset_right = -85.56256
+offset_bottom = 342.00006
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label3" type="Label" parent="AnimalPage1" unique_id=205317909]
+layout_mode = 0
+offset_left = 92.43744
+offset_top = 159.00006
+offset_right = 545.43744
+offset_bottom = 342.00006
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="DeerPlaceholder" type="Sprite2D" parent="AnimalPage1" unique_id=2025114548]
+position = Vector2(-311.5625, -40.5)
+scale = Vector2(0.3609831, 0.3601134)
+texture = ExtResource("3_kk17l")
+
+[node name="DeerPlaceholder2" type="Sprite2D" parent="AnimalPage1" unique_id=1669671104]
+position = Vector2(300.4375, -44.5)
+scale = Vector2(0.3609831, 0.3601134)
+texture = ExtResource("3_kk17l")
+
+[node name="AnimalPage2" type="Control" parent="." unique_id=1993627855]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2042.5625
+offset_top = 1253.0
+offset_right = 2082.5625
+offset_bottom = 1293.0
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage2" unique_id=201067088]
+position = Vector2(-1354.5625, -661)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
+[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage2" unique_id=986861407]
+position = Vector2(-730.5625, -669)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
+[node name="Label" type="Label" parent="AnimalPage2" unique_id=729000514]
+layout_mode = 0
+offset_left = -1552.5625
+offset_top = -945.0
+offset_right = -1088.5625
+offset_bottom = -827.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label4" type="Label" parent="AnimalPage2" unique_id=1794745149]
+layout_mode = 0
+offset_left = -940.56256
+offset_top = -945.0
+offset_right = -476.56256
+offset_bottom = -827.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label2" type="Label" parent="AnimalPage2" unique_id=800193322]
+layout_mode = 0
+offset_left = -1552.5625
+offset_top = -456.0
+offset_right = -1099.5625
+offset_bottom = -273.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label3" type="Label" parent="AnimalPage2" unique_id=1905014343]
+layout_mode = 0
+offset_left = -921.56256
+offset_top = -456.0
+offset_right = -468.56256
+offset_bottom = -273.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="AnimalPage3" type="Control" parent="." unique_id=2045009200]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2042.5625
+offset_top = 1253.0
+offset_right = 2082.5625
+offset_bottom = 1293.0
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage3" unique_id=812887526]
+visible = false
+position = Vector2(-1354.5625, -661)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
+[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage3" unique_id=1308216809]
+position = Vector2(-730.5625, -669)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
+[node name="Label" type="Label" parent="AnimalPage3" unique_id=404647243]
+layout_mode = 0
+offset_left = -1552.5625
+offset_top = -945.0
+offset_right = -1088.5625
+offset_bottom = -827.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label4" type="Label" parent="AnimalPage3" unique_id=254288184]
+layout_mode = 0
+offset_left = -940.56256
+offset_top = -945.0
+offset_right = -476.56256
+offset_bottom = -827.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label2" type="Label" parent="AnimalPage3" unique_id=1535434618]
+layout_mode = 0
+offset_left = -1552.5625
+offset_top = -456.0
+offset_right = -1099.5625
+offset_bottom = -273.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label3" type="Label" parent="AnimalPage3" unique_id=1149578796]
+layout_mode = 0
+offset_left = -921.56256
+offset_top = -456.0
+offset_right = -468.56256
+offset_bottom = -273.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="AnimalPage4" type="Control" parent="." unique_id=1581305201]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2042.5625
+offset_top = 1253.0
+offset_right = 2082.5625
+offset_bottom = 1293.0
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage4" unique_id=111765452]
+position = Vector2(-1354.5625, -661)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
+[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage4" unique_id=1118129010]
+position = Vector2(-730.5625, -669)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
+[node name="Label" type="Label" parent="AnimalPage4" unique_id=840363880]
+layout_mode = 0
+offset_left = -1552.5625
+offset_top = -945.0
+offset_right = -1088.5625
+offset_bottom = -827.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label4" type="Label" parent="AnimalPage4" unique_id=254808781]
+layout_mode = 0
+offset_left = -940.56256
+offset_top = -945.0
+offset_right = -476.56256
+offset_bottom = -827.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label2" type="Label" parent="AnimalPage4" unique_id=179828052]
+layout_mode = 0
+offset_left = -1552.5625
+offset_top = -456.0
+offset_right = -1099.5625
+offset_bottom = -273.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label3" type="Label" parent="AnimalPage4" unique_id=1655284099]
+layout_mode = 0
+offset_left = -921.56256
+offset_top = -456.0
+offset_right = -468.56256
+offset_bottom = -273.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="AnimalPage5" type="Control" parent="." unique_id=1768465902]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2042.5625
+offset_top = 1253.0
+offset_right = 2082.5625
+offset_bottom = 1293.0
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage5" unique_id=1419676827]
+position = Vector2(-1354.5625, -661)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
+[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage5" unique_id=1278399150]
+position = Vector2(-730.5625, -669)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
+[node name="Label" type="Label" parent="AnimalPage5" unique_id=1187949547]
+layout_mode = 0
+offset_left = -1552.5625
+offset_top = -945.0
+offset_right = -1088.5625
+offset_bottom = -827.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label4" type="Label" parent="AnimalPage5" unique_id=1060320848]
+layout_mode = 0
+offset_left = -940.56256
+offset_top = -945.0
+offset_right = -476.56256
+offset_bottom = -827.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label2" type="Label" parent="AnimalPage5" unique_id=663278894]
+layout_mode = 0
+offset_left = -1552.5625
+offset_top = -456.0
+offset_right = -1099.5625
+offset_bottom = -273.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label3" type="Label" parent="AnimalPage5" unique_id=468518727]
+layout_mode = 0
+offset_left = -921.56256
+offset_top = -456.0
+offset_right = -468.56256
+offset_bottom = -273.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="AnimalPage6" type="Control" parent="." unique_id=1704067655]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2042.5625
+offset_top = 1253.0
+offset_right = 2082.5625
+offset_bottom = 1293.0
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage6" unique_id=1000902462]
+position = Vector2(-1354.5625, -661)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
+[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage6" unique_id=95830331]
+position = Vector2(-730.5625, -669)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
+[node name="Label" type="Label" parent="AnimalPage6" unique_id=1905024690]
+layout_mode = 0
+offset_left = -1552.5625
+offset_top = -945.0
+offset_right = -1088.5625
+offset_bottom = -827.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label4" type="Label" parent="AnimalPage6" unique_id=483809690]
+layout_mode = 0
+offset_left = -940.56256
+offset_top = -945.0
+offset_right = -476.56256
+offset_bottom = -827.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label2" type="Label" parent="AnimalPage6" unique_id=655039624]
+layout_mode = 0
+offset_left = -1552.5625
+offset_top = -456.0
+offset_right = -1099.5625
+offset_bottom = -273.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label3" type="Label" parent="AnimalPage6" unique_id=779953721]
+layout_mode = 0
+offset_left = -921.56256
+offset_top = -456.0
+offset_right = -468.56256
+offset_bottom = -273.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[connection signal="pressed" from="PageTraversal/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="TableOfContents/Animal 1" to="." method="_on_animal_1_pressed"]
+[connection signal="pressed" from="TableOfContents/Animal 2" to="." method="_on_animal_2_pressed"]
+[connection signal="pressed" from="TableOfContents/Animal 3" to="." method="_on_animal_3_pressed"]
+[connection signal="pressed" from="TableOfContents/Animal 4" to="." method="_on_animal_4_pressed"]
+[connection signal="pressed" from="TableOfContents/Animal 5" to="." method="_on_animal_5_pressed"]
+[connection signal="pressed" from="TableOfContents/Animal 6" to="." method="_on_animal_6_pressed"]

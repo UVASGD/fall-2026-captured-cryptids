@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhyj2ixkvaj72"
-path="res://.godot/imported/Book_Placeholder.jpeg-ceb5ad3d1882843641bd593b5e97ea86.ctex"
+uid="uid://dgsqvfd03lx7y"
+path="res://.godot/imported/RightArrow_placeholder.jpeg-57557bb61e95e8248d596f0e94aa507d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BookMenu/Book_Placeholder.jpeg"
-dest_files=["res://.godot/imported/Book_Placeholder.jpeg-ceb5ad3d1882843641bd593b5e97ea86.ctex"]
+source_file="res://BookMenu/RightArrow_placeholder.jpeg"
+dest_files=["res://.godot/imported/RightArrow_placeholder.jpeg-57557bb61e95e8248d596f0e94aa507d.ctex"]
 
 [params]
 

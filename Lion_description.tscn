@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cytguyhumh05c"]
+
+[ext_resource type="Texture2D" uid="uid://dhyj2ixkvaj72" path="res://BookMenu/Journal_Placeholder.jpeg" id="1_vkdyl"]
+[ext_resource type="Texture2D" uid="uid://crc1fcuqn1ux4" path="res://BookMenu/AnimalPlaceholder.jpg" id="2_vkdyl"]
+
+[node name="Node2D" type="Node2D" unique_id=505299662]
+scale = Vector2(1, 1.0034187)
+
+[node name="Control" type="Control" parent="." unique_id=995038668]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1022.0
+offset_top = 626.0
+offset_right = 1062.0
+offset_bottom = 666.0
+
+[node name="Label" type="Label" parent="Control" unique_id=981721999]
+layout_mode = 0
+offset_left = -538.56256
+offset_top = -331.99994
+offset_right = -74.56256
+offset_bottom = -213.99994
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label2" type="Label" parent="Control" unique_id=2014153407]
+layout_mode = 0
+offset_left = -538.56256
+offset_top = 159.00006
+offset_right = -85.56256
+offset_bottom = 342.00006
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label3" type="Label" parent="Control" unique_id=690303178]
+layout_mode = 0
+offset_left = 103.0
+offset_top = -332.0
+offset_right = 567.0
+offset_bottom = -214.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Label4" type="Label" parent="Control" unique_id=1146956656]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 159.0
+offset_right = 556.0
+offset_bottom = 342.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Back" type="Button" parent="Control" unique_id=361297240]
+layout_mode = 0
+offset_left = -558.0
+offset_top = -411.73248
+offset_right = -413.73248
+offset_bottom = -317.73248
+scale = Vector2(1.2546139, 1)
+text = "BACK"
+
+[node name="Next Page" type="Button" parent="Control" unique_id=1259487419]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 241.0
+offset_right = 524.2675
+offset_bottom = 335.0
+scale = Vector2(1.2546139, 1)
+text = "Next
+"
+
+[node name="Before Page" type="Button" parent="Control" unique_id=1378896205]
+layout_mode = 0
+offset_left = -558.0
+offset_top = 241.0
+offset_right = -413.73248
+offset_bottom = 335.0
+scale = Vector2(1.2546139, 1)
+text = "Before
+"
+
+[node name="Control2" type="Sprite2D" parent="." unique_id=815690518]
+z_index = -2
+position = Vector2(1020.56256, 627.9999)
+scale = Vector2(4.0277343, 4.6806283)
+texture = ExtResource("1_vkdyl")
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="." unique_id=2062110579]
+position = Vector2(686.99994, 576)
+scale = Vector2(0.62254894, 0.59803915)
+texture = ExtResource("2_vkdyl")
+
+[node name="Control3" type="Sprite2D" parent="." unique_id=1134225744]
+position = Vector2(1328.5625, 575.99994)
+scale = Vector2(0.62254894, 0.59803915)
+texture = ExtResource("2_vkdyl")

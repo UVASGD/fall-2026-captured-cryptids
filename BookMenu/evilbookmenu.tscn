@@ -1,10 +1,27 @@
-[gd_scene format=3 uid="uid://dqrg5m55aubu3"]
+[gd_scene format=3 uid="uid://c0ij6vmlroqwk"]
 
-[ext_resource type="Texture2D" uid="uid://dhyj2ixkvaj72" path="res://BookMenu/Book_Placeholder.jpeg" id="1_0uad7"]
-[ext_resource type="Script" uid="uid://4ytijpmu5r65" path="res://BookMenu/evilbookmenu.gd" id="1_fv5i2"]
+[ext_resource type="Texture2D" uid="uid://dhyj2ixkvaj72" path="res://BookMenu/Journal_Placeholder.jpeg" id="1_0uad7"]
+
+[sub_resource type="GDScript" id="GDScript_xko2j"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_normal_book_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://BookMenu/bookmenu.tscn\")
+"
 
 [node name="Node2D" type="Node2D" unique_id=632352899]
-script = ExtResource("1_fv5i2")
+script = SubResource("GDScript_xko2j")
 
 [node name="Control" type="Control" parent="." unique_id=1520916274]
 layout_mode = 3

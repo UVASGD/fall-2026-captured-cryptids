@@ -7,7 +7,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"): 
-		if GameManager._journal_open:
-			GameManager._journal_open = false
+		if GameManager._journal_open or GameManager._camera_open:
+			return
 		visible = !visible
 		GameManager._pause_open = visible

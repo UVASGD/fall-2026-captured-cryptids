@@ -1,16 +1,23 @@
 extends Node
 
-# Global variables
-var pictures_taken = 0
-var pictures_remaining = 10
-var cryptids_taken = 0
-var creatures_taken = 0
+# Global Camera Variables
+var pictures_taken: int = 0
+var pictures_remaining: int = 10
+var camera_battery: float = 100.0
 
+# Global Journal Variables
+# Append the cryptid or creature's name into array, read from array for journal
+var recorded_cryptids = []
+var recorded_creatures = []
+var cryptids_taken: int = 0
+var creatures_taken: int = 0
+
+# Global Boolean Toggles
 var _journal_open: bool = false
 var _pause_open: bool = false
 var _camera_open: bool = false
 
-# Is journal open?
+# Journal Open Check - is journal open?
 var journal_open: bool = false:
 	get:
 		return _journal_open
@@ -18,7 +25,7 @@ var journal_open: bool = false:
 		_journal_open = value
 		_update_ui_block()
 
-# Is pause open?
+# Pause Menu Open Check - is pause open?
 var pause_open: bool = false:
 	get:
 		return _pause_open
@@ -26,7 +33,7 @@ var pause_open: bool = false:
 		_pause_open = value
 		_update_ui_block()
 
-# Is camera open?
+# Camera Open Check - is camera open?
 var camera_open: bool = false:
 	get:
 		return _camera_open
@@ -38,7 +45,7 @@ var ui_block: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

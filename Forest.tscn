@@ -392,6 +392,8 @@ script = ExtResource("2_h1ret")
 position = Vector2(953, 506)
 sprite_frames = SubResource("SpriteFrames_05hq6")
 
+[node name="Battery_Timer" type="Timer" parent="Camera" unique_id=1786520544]
+
 [node name="Journal" type="CanvasLayer" parent="." unique_id=426268938]
 script = ExtResource("5_j4pel")
 

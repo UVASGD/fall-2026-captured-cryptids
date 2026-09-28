@@ -7,7 +7,12 @@ func _ready() -> void:
 	$JournalPlaceholder.show()
 	$TableOfContents.show()
 	$PageTraversal.hide()
+	$AnimalPage1.hide()
 	$AnimalPage2.hide()
+	$AnimalPage3.hide()
+	$AnimalPage4.hide()
+	$AnimalPage5.hide()
+	$AnimalPage6.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -68,4 +73,13 @@ func _on_animal_6_pressed() -> void:
 	$TableOfContents.hide()
 	$AnimalPage6.show()
 	$PageTraversal.show()
+	pass # Replace with function body.
+
+
+func _on_before_pressed() -> void:
+	
+	pass # Replace with function body.
+
+func _on_next_pressed() -> void:
+	
 	pass # Replace with function body.

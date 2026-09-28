@@ -16,7 +16,6 @@ scale = Vector2(4.0277343, 4.6806283)
 texture = ExtResource("2_op5li")
 
 [node name="PageTraversal" type="Control" parent="." unique_id=1888898136]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -31,25 +30,23 @@ offset_bottom = 548.99994
 scale = Vector2(0.3008553, 0.28154972)
 texture_normal = ExtResource("3_d42ad")
 
-[node name="Before Page" type="Button" parent="PageTraversal" unique_id=473250912]
-layout_mode = 0
-offset_left = 474.0
-offset_top = 871.0
-offset_right = 618.2676
-offset_bottom = 965.0
-scale = Vector2(1.2546139, 1)
-text = "Before
-"
-
-[node name="Next Page" type="Button" parent="PageTraversal" unique_id=1673962561]
+[node name="Before" type="TextureButton" parent="PageTraversal" unique_id=1436267025]
 layout_mode = 0
 offset_left = 1412.0
 offset_top = 871.0
-offset_right = 1556.2676
-offset_bottom = 965.0
-scale = Vector2(1.2546139, 1)
-text = "Next
-"
+offset_right = 2008.0
+offset_bottom = 1206.0
+scale = Vector2(0.3008553, 0.28154972)
+texture_normal = ExtResource("3_d42ad")
+
+[node name="Next" type="TextureButton" parent="PageTraversal" unique_id=1233638397]
+layout_mode = 0
+offset_left = 474.00003
+offset_top = 871.0
+offset_right = 1070.0
+offset_bottom = 1206.0
+scale = Vector2(0.3008553, 0.28154972)
+texture_normal = ExtResource("3_d42ad")
 
 [node name="TableOfContents" type="Control" parent="." unique_id=811960900]
 visible = false
@@ -105,12 +102,6 @@ offset_top = 733.0
 offset_right = 1579.0
 offset_bottom = 978.3316
 text = "Animal 6"
-
-[node name="Control" type="Control" parent="." unique_id=1104602152]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="AnimalPage1" type="Control" parent="." unique_id=1761436742]
 visible = false
@@ -168,6 +159,7 @@ scale = Vector2(0.3609831, 0.3601134)
 texture = ExtResource("3_kk17l")
 
 [node name="AnimalPage2" type="Control" parent="." unique_id=1993627855]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 2042.5625
@@ -222,7 +214,6 @@ theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
 [node name="AnimalPage3" type="Control" parent="." unique_id=2045009200]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 2042.5625
@@ -231,7 +222,6 @@ offset_right = 2082.5625
 offset_bottom = 1293.0
 
 [node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage3" unique_id=812887526]
-visible = false
 position = Vector2(-1354.5625, -661)
 scale = Vector2(0.73039216, 0.62908494)
 texture = ExtResource("4_ma4mm")
@@ -443,6 +433,10 @@ theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
 [connection signal="pressed" from="PageTraversal/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PageTraversal/Before" to="." method="_on_before_pressed"]
+[connection signal="pressed" from="PageTraversal/Before" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PageTraversal/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="PageTraversal/Next" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 1" to="." method="_on_animal_1_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 2" to="." method="_on_animal_2_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 3" to="." method="_on_animal_3_pressed"]

@@ -30,7 +30,7 @@ offset_bottom = 548.99994
 scale = Vector2(0.3008553, 0.28154972)
 texture_normal = ExtResource("3_d42ad")
 
-[node name="Before" type="TextureButton" parent="PageTraversal" unique_id=1436267025]
+[node name="Next" type="TextureButton" parent="PageTraversal" unique_id=1436267025]
 layout_mode = 0
 offset_left = 1412.0
 offset_top = 871.0
@@ -39,7 +39,7 @@ offset_bottom = 1206.0
 scale = Vector2(0.3008553, 0.28154972)
 texture_normal = ExtResource("3_d42ad")
 
-[node name="Next" type="TextureButton" parent="PageTraversal" unique_id=1233638397]
+[node name="Before" type="TextureButton" parent="PageTraversal" unique_id=1233638397]
 layout_mode = 0
 offset_left = 474.00003
 offset_top = 871.0
@@ -433,10 +433,10 @@ theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
 [connection signal="pressed" from="PageTraversal/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="PageTraversal/Before" to="." method="_on_before_pressed"]
-[connection signal="pressed" from="PageTraversal/Before" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="PageTraversal/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="PageTraversal/Next" to="." method="_on_before_pressed"]
 [connection signal="pressed" from="PageTraversal/Next" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PageTraversal/Before" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="PageTraversal/Before" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 1" to="." method="_on_animal_1_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 2" to="." method="_on_animal_2_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 3" to="." method="_on_animal_3_pressed"]

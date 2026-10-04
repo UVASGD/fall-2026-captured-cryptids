@@ -277,6 +277,11 @@ animations = [{
 [node name="GameRoot" type="Node2D" unique_id=1296171585]
 script = ExtResource("1_n5rn3")
 
+[node name="MainCamera" parent="." unique_id=1470264754 instance=ExtResource("75_c8yhr")]
+limit_right = 3828
+
+[node name="Battery_Timer" type="Timer" parent="." unique_id=2108566317]
+
 [node name="Journal" type="CanvasLayer" parent="." unique_id=426268938]
 script = ExtResource("5_j4pel")
 
@@ -373,6 +378,3 @@ wait_low = 2
 wait_high = 4
 collision_position = Vector2(-0.6, 0)
 collision_size = Vector2(5.28, 5.69)
-
-[node name="MainCamera" parent="." unique_id=1470264754 instance=ExtResource("75_c8yhr")]
-limit_right = 3828

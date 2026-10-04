@@ -12,6 +12,9 @@ var recorded_creatures = []
 var cryptids_taken: int = 0
 var creatures_taken: int = 0
 
+# Global Environment Variables
+var time_of_day: int = 0
+
 # Global Boolean Toggles
 var _journal_open: bool = false
 var _pause_open: bool = false

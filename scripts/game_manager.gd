@@ -11,6 +11,7 @@ var recorded_cryptids = []
 var recorded_creatures = []
 var cryptids_taken: int = 0
 var creatures_taken: int = 0
+var journal_animation: bool = false
 
 # Global Environment Variables
 var time_of_day: int = 0

@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://cdybxvc8s8si6" path="res://scripts/game_manager.gd" id="1_n5rn3"]
 [ext_resource type="PackedScene" uid="uid://dapvlr3gs0q5c" path="res://BookMenu/bookmenu.tscn" id="3_rcklr"]
 [ext_resource type="Script" uid="uid://dlcbh40cfvktj" path="res://scripts/journal.gd" id="5_j4pel"]
+[ext_resource type="Script" uid="uid://db3apysl53d6e" path="res://scenes/blurrrrr.gd" id="6_4sgv5"]
 [ext_resource type="Texture2D" uid="uid://bbqx8d1ttcrvb" path="res://Art_Assets/Pause_Menu_Placeholder.png" id="7_4weo8"]
 [ext_resource type="Script" uid="uid://cqhlktevebqoj" path="res://scripts/ui/pause_menu.gd" id="8_adj1i"]
 [ext_resource type="Texture2D" uid="uid://wbwrj682au44" path="res://icon.svg" id="8_vfnn3"]
 [ext_resource type="Script" uid="uid://bhqtbki340m5p" path="res://scripts/ui/leave_game_button.gd" id="9_vfnn3"]
 [ext_resource type="Script" uid="uid://btptcqouq05cx" path="res://scripts/ui/settings_button.gd" id="10_adj1i"]
 [ext_resource type="Script" uid="uid://dx2jljqarn24q" path="res://scripts/ui/return_to_game_button.gd" id="11_01kxy"]
+[ext_resource type="Shader" uid="uid://bmmwhmrjde04w" path="res://scenes/Forest.gdshader" id="11_f7c5t"]
 [ext_resource type="Texture2D" uid="uid://s3vbqxxh1mpw" path="res://Art_Assets/Background/BG_Draft_1_Top_Layer.png" id="12_hpon2"]
 [ext_resource type="PackedScene" uid="uid://4crq2uruj6rt" path="res://scenes/creature.tscn" id="12_kf2k2"]
 [ext_resource type="Texture2D" uid="uid://dogyfi7di0xsg" path="res://Art_Assets/Deer [Normal]/deer_regular_0000.png" id="13_x7us8"]
@@ -68,6 +70,10 @@
 [ext_resource type="PackedScene" uid="uid://dijtpgj3j3r2n" path="res://scenes/main_camera.tscn" id="75_c8yhr"]
 [ext_resource type="Texture2D" uid="uid://cp8aw0fw6rk3k" path="res://Art_Assets/Moth Bush/MothBush_0012.png" id="75_iomec"]
 [ext_resource type="Texture2D" uid="uid://dqrbtuk2rhn84" path="res://Art_Assets/Moth Bush/MothBush_0013.png" id="76_fbunq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4sgv5"]
+shader = ExtResource("11_f7c5t")
+shader_parameter/blur_amount = 2.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k3d1m"]
 animations = [{
@@ -285,10 +291,31 @@ limit_right = 3828
 [node name="Journal" type="CanvasLayer" parent="." unique_id=426268938]
 script = ExtResource("5_j4pel")
 
+[node name="BlurRect" type="ColorRect" parent="Journal" unique_id=1260211425]
+z_index = -100
+material = SubResource("ShaderMaterial_4sgv5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Journal" parent="Journal" unique_id=2056271101 instance=ExtResource("3_rcklr")]
 
+[node name="Blurr" type="CanvasLayer" parent="." unique_id=258054950]
+script = ExtResource("6_4sgv5")
+
 [node name="Pause Menu" type="CanvasLayer" parent="." unique_id=219764977]
+process_mode = 3
 script = ExtResource("8_adj1i")
+
+[node name="ColorRect" type="ColorRect" parent="Pause Menu" unique_id=49869343]
+material = SubResource("ShaderMaterial_4sgv5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Pause_Anim" type="AnimatedSprite2D" parent="Pause Menu" unique_id=780029556]
 visible = false
@@ -371,10 +398,18 @@ wait_high = 10
 collision_position = Vector2(0.43, 0.39)
 collision_size = Vector2(8.87, 7.99)
 
-[node name="MothBush" parent="Main Background/CreatureRoot" unique_id=561356661 instance=ExtResource("12_kf2k2")]
+[node name="MothBush" parent="Main Background/CreatureRoot" unique_id=561356661 node_paths=PackedStringArray("camera") instance=ExtResource("12_kf2k2")]
 position = Vector2(-2800, 251.89)
 sprite_frames = SubResource("SpriteFrames_s8oh3")
+camera = NodePath("../../../MainCamera")
 wait_low = 2
 wait_high = 4
 collision_position = Vector2(-0.6, 0)
 collision_size = Vector2(5.28, 5.69)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Main Background/CreatureRoot/MothBush" unique_id=1731452003]
+offset_left = -26.75
+offset_top = -23.86125
+offset_right = 16.25
+offset_bottom = 23.76375
+border_width = 0.0

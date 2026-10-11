@@ -22,7 +22,6 @@ class_name Creature
 		_update_collision()
 
 var is_captured: bool = false;
-var is_zoomed: bool = false;
 		
 func _update_collision():
 	if !collision_shape: 
@@ -34,32 +33,16 @@ func _update_collision():
 	shape.size = collision_size
 
 func _when_clicked() -> void:
-	# Avoid running logic if inside the Godot editor viewport
-	if Engine.is_editor_hint(): return
+	modulate = Color.RED if is_cryptid else Color.GREEN
+	is_captured = true
 	
-	if is_zoomed:
-		# 1. Player clicked it a SECOND time while already zoomed in
-		modulate = Color.RED if is_cryptid else Color.GREEN
-		is_captured = true
+	if camera and !Engine.is_editor_hint():
+		var zoom_rect: Rect2 = Rect2(
+			global_position + collision_position - (collision_size / 2.0),
+			collision_size
+		)
 		
-		# 2. Wait shortly (e.g., 0.5 seconds) to let the player see the color change
-		await get_tree().create_timer(0.5).timeout
-		
-		# 3. Clean up the state and reset the camera view
-		if camera:
-			camera.reset_camera()
-		is_zoomed = false
-		
-	else:	
-		# 1. Player clicked it for the FIRST time (Not zoomed in yet)
-		if camera:
-			var zoom_rect: Rect2 = Rect2(
-				global_position + collision_position - (collision_size / 2.0),
-				collision_size
-			)
-			
-			camera.focus_on_rectangle(zoom_rect)
-			is_zoomed = true # Lock into the zoomed state
+		camera.focus_on_rectangle(zoom_rect)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

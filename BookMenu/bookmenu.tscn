@@ -5,6 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://dgsqvfd03lx7y" path="res://BookMenu/RightArrow_placeholder.jpeg" id="3_d42ad"]
 [ext_resource type="Texture2D" uid="uid://dmsgc8sogbnpg" path="res://BookMenu/Deer_Placeholder.png" id="3_kk17l"]
 [ext_resource type="Texture2D" uid="uid://crc1fcuqn1ux4" path="res://BookMenu/AnimalPlaceholder.jpg" id="4_ma4mm"]
+[ext_resource type="Texture2D" uid="uid://bh0yher3sqi71" path="res://BookMenu/images (2).jpeg" id="6_ocmi6"]
+[ext_resource type="Texture2D" uid="uid://ynerjy4tbc6x" path="res://BookMenu/images (3).jpeg" id="7_u0pjj"]
+[ext_resource type="Texture2D" uid="uid://ckc1l16tlyr02" path="res://BookMenu/images (4).jpeg" id="8_3kt0u"]
+[ext_resource type="Texture2D" uid="uid://7olxklr2e560" path="res://BookMenu/images (5).jpeg" id="9_a2blu"]
+[ext_resource type="Texture2D" uid="uid://birays73fkbdl" path="res://BookMenu/images (6).jpeg" id="10_rgyj1"]
+[ext_resource type="Texture2D" uid="uid://dcyt3oodmbuph" path="res://BookMenu/images (7).jpeg" id="11_qih02"]
 
 [node name="Journal" type="Node2D" unique_id=2056271101]
 script = ExtResource("1_am6ud")
@@ -16,6 +22,7 @@ scale = Vector2(4.0277343, 4.6806283)
 texture = ExtResource("2_op5li")
 
 [node name="PageTraversal" type="Control" parent="." unique_id=1888898136]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -57,51 +64,111 @@ offset_bottom = 40.0
 
 [node name="Animal 1" type="Button" parent="TableOfContents" unique_id=1150353382]
 layout_mode = 0
-offset_left = 1074.0
-offset_top = 202.0
-offset_right = 1312.0
-offset_bottom = 447.3316
+offset_left = 474.0
+offset_top = 214.46739
+offset_right = 712.0
+offset_bottom = 459.799
+rotation = -0.001963821
 text = "Animal 1"
 
 [node name="Animal 2" type="Button" parent="TableOfContents" unique_id=692568959]
 layout_mode = 0
-offset_left = 1341.0
-offset_top = 202.0
-offset_right = 1579.0
-offset_bottom = 447.3316
+offset_left = 741.0
+offset_top = 214.46739
+offset_right = 979.0
+offset_bottom = 459.799
 text = "Animal 2"
 
 [node name="Animal 3" type="Button" parent="TableOfContents" unique_id=477329331]
 layout_mode = 0
-offset_left = 1074.0
-offset_top = 470.0
-offset_right = 1312.0
-offset_bottom = 715.3316
+offset_left = 474.0
+offset_top = 482.4674
+offset_right = 712.0
+offset_bottom = 727.799
 text = "Animal 3"
 
 [node name="Animal 4" type="Button" parent="TableOfContents" unique_id=2018806742]
 layout_mode = 0
-offset_left = 1341.0
-offset_top = 470.0
-offset_right = 1579.0
-offset_bottom = 715.3316
+offset_left = 741.0
+offset_top = 482.4674
+offset_right = 979.0
+offset_bottom = 727.799
 text = "Animal 4"
 
 [node name="Animal 5" type="Button" parent="TableOfContents" unique_id=582087793]
 layout_mode = 0
-offset_left = 1074.0
-offset_top = 733.0
-offset_right = 1312.0
-offset_bottom = 978.3316
+offset_left = 474.0
+offset_top = 745.4674
+offset_right = 712.0
+offset_bottom = 990.799
 text = "Animal 5"
 
 [node name="Animal 6" type="Button" parent="TableOfContents" unique_id=372092819]
 layout_mode = 0
-offset_left = 1341.0
-offset_top = 733.0
-offset_right = 1579.0
-offset_bottom = 978.3316
+offset_left = 741.0
+offset_top = 745.4674
+offset_right = 979.0
+offset_bottom = 990.799
 text = "Animal 6"
+
+[node name="Artifacts 1" type="Button" parent="TableOfContents" unique_id=478231367]
+layout_mode = 0
+offset_left = 1086.0
+offset_top = 214.00003
+offset_right = 1324.0
+offset_bottom = 459.33163
+rotation = -0.001963821
+text = "Artifacts 1
+"
+
+[node name="Artifacts 2" type="Button" parent="TableOfContents" unique_id=705846320]
+layout_mode = 0
+offset_left = 1086.0
+offset_top = 736.0
+offset_right = 1324.0
+offset_bottom = 981.3316
+rotation = -0.001963821
+text = "Artifacts 5"
+
+[node name="Artifacts 3" type="Button" parent="TableOfContents" unique_id=1911339620]
+layout_mode = 0
+offset_left = 1345.0
+offset_top = 482.0
+offset_right = 1583.0
+offset_bottom = 727.3316
+rotation = -0.001963821
+text = "Artifacts 4
+"
+
+[node name="Artifacts 4" type="Button" parent="TableOfContents" unique_id=478230069]
+layout_mode = 0
+offset_left = 1086.0
+offset_top = 482.0
+offset_right = 1324.0
+offset_bottom = 727.3316
+rotation = -0.001963821
+text = "Artifacts 3
+"
+
+[node name="Artifacts 5" type="Button" parent="TableOfContents" unique_id=2115191045]
+layout_mode = 0
+offset_left = 1346.0
+offset_top = 214.0
+offset_right = 1584.0
+offset_bottom = 459.3316
+rotation = -0.001963821
+text = "Artifacts 1
+"
+
+[node name="Artifacts 6" type="Button" parent="TableOfContents" unique_id=69630162]
+layout_mode = 0
+offset_left = 1346.0
+offset_top = 737.0
+offset_right = 1584.0
+offset_bottom = 982.3316
+rotation = -0.001963821
+text = "Artifacts 6
+"
 
 [node name="AnimalPage1" type="Control" parent="." unique_id=1761436742]
 visible = false
@@ -434,6 +501,178 @@ offset_bottom = -273.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
+[node name="ArtifactPage1" type="Control" parent="." unique_id=701620406]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label5" type="Label" parent="ArtifactPage1" unique_id=591366932]
+layout_mode = 0
+offset_left = 1121.0
+offset_top = 797.0
+offset_right = 1574.0
+offset_bottom = 980.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label6" type="Label" parent="ArtifactPage1" unique_id=1986134068]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 308.0
+offset_right = 954.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Images(2)" type="Sprite2D" parent="ArtifactPage1" unique_id=1454482340]
+position = Vector2(741, 627)
+scale = Vector2(0.65993786, 0.9978903)
+texture = ExtResource("6_ocmi6")
+
+[node name="ArtifactPage2" type="Control" parent="." unique_id=283130553]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label7" type="Label" parent="ArtifactPage2" unique_id=1415860279]
+layout_mode = 0
+offset_left = 1121.0
+offset_top = 797.0
+offset_right = 1574.0
+offset_bottom = 980.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label8" type="Label" parent="ArtifactPage2" unique_id=18085018]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 308.0
+offset_right = 954.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Images(3)" type="Sprite2D" parent="ArtifactPage2" unique_id=152099284]
+position = Vector2(688, 697)
+texture = ExtResource("7_u0pjj")
+
+[node name="ArtifactPage3" type="Control" parent="." unique_id=235009771]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label9" type="Label" parent="ArtifactPage3" unique_id=1490702280]
+layout_mode = 0
+offset_left = 1121.0
+offset_top = 797.0
+offset_right = 1574.0
+offset_bottom = 980.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label10" type="Label" parent="ArtifactPage3" unique_id=1858340720]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 308.0
+offset_right = 954.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Images(4)" type="Sprite2D" parent="ArtifactPage3" unique_id=581385971]
+position = Vector2(741, 667)
+texture = ExtResource("8_3kt0u")
+
+[node name="ArtifactPage4" type="Control" parent="." unique_id=1295994540]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label11" type="Label" parent="ArtifactPage4" unique_id=29713274]
+layout_mode = 0
+offset_left = 1121.0
+offset_top = 797.0
+offset_right = 1574.0
+offset_bottom = 980.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label12" type="Label" parent="ArtifactPage4" unique_id=1754339557]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 308.0
+offset_right = 954.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Images(5)" type="Sprite2D" parent="ArtifactPage4" unique_id=1080240128]
+position = Vector2(741, 667)
+texture = ExtResource("9_a2blu")
+
+[node name="ArtifactPage5" type="Control" parent="." unique_id=318685284]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label13" type="Label" parent="ArtifactPage5" unique_id=1726843073]
+layout_mode = 0
+offset_left = 1121.0
+offset_top = 797.0
+offset_right = 1574.0
+offset_bottom = 980.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label14" type="Label" parent="ArtifactPage5" unique_id=1712751553]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 308.0
+offset_right = 954.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
+[node name="Images(6)" type="Sprite2D" parent="ArtifactPage5" unique_id=1472391311]
+position = Vector2(755, 667)
+texture = ExtResource("10_rgyj1")
+
+[node name="ArtifactPage6" type="Control" parent="." unique_id=1936024520]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Images(7)" type="Sprite2D" parent="ArtifactPage6" unique_id=1797557280]
+position = Vector2(723, 610)
+texture = ExtResource("11_qih02")
+
+[node name="Label15" type="Label" parent="ArtifactPage6/Images(7)" unique_id=668659113]
+offset_left = 398.0
+offset_top = 187.0
+offset_right = 851.0
+offset_bottom = 370.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Lore*"
+
+[node name="Label16" type="Label" parent="ArtifactPage6/Images(7)" unique_id=907296002]
+offset_left = -233.0
+offset_top = -302.0
+offset_right = 231.0
+offset_bottom = -184.0
+theme_override_font_sizes/font_size = 56
+text = "*Insert Name*"
+
 [connection signal="pressed" from="PageTraversal/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PageTraversal/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="PageTraversal/Before" to="." method="_on_before_pressed"]
@@ -443,3 +682,9 @@ text = "*Insert Lore*"
 [connection signal="pressed" from="TableOfContents/Animal 4" to="." method="_on_animal_4_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 5" to="." method="_on_animal_5_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 6" to="." method="_on_animal_6_pressed"]
+[connection signal="pressed" from="TableOfContents/Artifacts 1" to="." method="_on_artifacts_1_pressed"]
+[connection signal="pressed" from="TableOfContents/Artifacts 2" to="." method="_on_artifacts_2_pressed"]
+[connection signal="pressed" from="TableOfContents/Artifacts 3" to="." method="_on_artifacts_3_pressed"]
+[connection signal="pressed" from="TableOfContents/Artifacts 4" to="." method="_on_artifacts_4_pressed"]
+[connection signal="pressed" from="TableOfContents/Artifacts 5" to="." method="_on_artifacts_5_pressed"]
+[connection signal="pressed" from="TableOfContents/Artifacts 6" to="." method="_on_artifacts_6_pressed"]

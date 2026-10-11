@@ -1,0 +1,94 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bhkxjxq02gxlb"]
+
+[ext_resource type="Texture2D" uid="uid://px7f2fii5tak" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0000.png" id="1_3iinh"]
+[ext_resource type="Texture2D" uid="uid://cyuwij7mmv18v" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0001.png" id="2_utrca"]
+[ext_resource type="Texture2D" uid="uid://hdipmvugurd1" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0002.png" id="3_yai16"]
+[ext_resource type="Texture2D" uid="uid://bj7ka1427sqii" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0003.png" id="4_qrve1"]
+[ext_resource type="Texture2D" uid="uid://n08bt4yi4rvc" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0004.png" id="5_umu5u"]
+[ext_resource type="Texture2D" uid="uid://cqjp0xds53acc" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0005.png" id="6_7fbcw"]
+[ext_resource type="Texture2D" uid="uid://ds85tpuc77pb4" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0006.png" id="7_pbmw7"]
+[ext_resource type="Texture2D" uid="uid://bac5kvkg0a30r" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0007.png" id="8_l6xbe"]
+[ext_resource type="Texture2D" uid="uid://bl0j8xonrdbl4" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0008.png" id="9_cfe2a"]
+[ext_resource type="Texture2D" uid="uid://g35oflvf6gye" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0009.png" id="10_j3lo1"]
+[ext_resource type="Texture2D" uid="uid://c2fcmmchjjo2a" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0010.png" id="11_5lm1o"]
+[ext_resource type="Texture2D" uid="uid://cge0fyy27csts" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0011.png" id="12_smt47"]
+[ext_resource type="Texture2D" uid="uid://bxfqxxipg0elh" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0012.png" id="13_tvc7t"]
+[ext_resource type="Texture2D" uid="uid://ialr5fbfshh4" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0013.png" id="14_ia1vo"]
+[ext_resource type="Texture2D" uid="uid://3vqr3nahxlsp" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0014.png" id="15_vwmy8"]
+[ext_resource type="Texture2D" uid="uid://br0qqk8m15vt1" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0015.png" id="16_ygv2v"]
+[ext_resource type="Texture2D" uid="uid://gty3chc2k2or" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0016.png" id="17_dd3j3"]
+[ext_resource type="Texture2D" uid="uid://b5icvpy4uo6bm" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0017.png" id="18_qaeem"]
+[ext_resource type="Texture2D" uid="uid://cu68v5g00uqc4" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0018.png" id="19_sc3vf"]
+[ext_resource type="Texture2D" uid="uid://bs6r8le0hdyvd" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0019.png" id="20_ha6d6"]
+[ext_resource type="Texture2D" uid="uid://cew7kquqfjxjl" path="res://assets/art/creatures/deer-cryptid/deer_cryptid_0020.png" id="21_1n0eg"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3iinh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_utrca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yai16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qrve1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_umu5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7fbcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pbmw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l6xbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cfe2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j3lo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5lm1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_smt47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tvc7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ia1vo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vwmy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ygv2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dd3j3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qaeem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sc3vf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ha6d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1n0eg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]

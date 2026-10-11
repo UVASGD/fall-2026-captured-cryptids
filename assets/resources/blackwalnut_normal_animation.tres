@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cytfkh5j2e3dg"]
+
+[ext_resource type="Texture2D" uid="uid://c4v5wv2223i1f" path="res://assets/art/creatures/blackwalnut/BlackWalnutReal.png" id="1_qqtsu"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qqtsu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

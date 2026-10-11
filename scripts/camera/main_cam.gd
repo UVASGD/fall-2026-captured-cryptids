@@ -4,8 +4,8 @@ extends Camera2D
 @export var follow_speed_cursor: float = 100.0
 @export var zoom_duration: float = 0.5  # Time in seconds for the zoom transition
 
-const WRAP_LEFT := -2900.0
-const WRAP_RIGHT := 2900.0
+const WRAP_LEFT := -3500.0
+const WRAP_RIGHT := 3500.0
 
 var target := Vector2.ZERO   # Virtual target the camera follows
 var default_zoom: Vector2

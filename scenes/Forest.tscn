@@ -4,12 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dapvlr3gs0q5c" path="res://BookMenu/bookmenu.tscn" id="3_rcklr"]
 [ext_resource type="Script" uid="uid://dlcbh40cfvktj" path="res://scripts/journal.gd" id="5_j4pel"]
 [ext_resource type="Script" path="res://scenes/blurrrrr.gd" id="6_4sgv5"]
-[ext_resource type="Texture2D" uid="uid://bbqx8d1ttcrvb" path="res://assets/art/Pause_Menu_Placeholder.png" id="7_4weo8"]
-[ext_resource type="Script" uid="uid://cqhlktevebqoj" path="res://scripts/ui/pause_menu.gd" id="8_adj1i"]
-[ext_resource type="Texture2D" uid="uid://wbwrj682au44" path="res://icon.svg" id="8_vfnn3"]
-[ext_resource type="Script" uid="uid://bhqtbki340m5p" path="res://scripts/ui/leave_game_button.gd" id="9_vfnn3"]
-[ext_resource type="Script" uid="uid://btptcqouq05cx" path="res://scripts/ui/settings_button.gd" id="10_adj1i"]
-[ext_resource type="Script" uid="uid://dx2jljqarn24q" path="res://scripts/ui/return_to_game_button.gd" id="11_01kxy"]
+[ext_resource type="PackedScene" uid="uid://1wc44a78b3f4" path="res://scenes/pause_menu.tscn" id="7_r1wi6"]
 [ext_resource type="Shader" path="res://scenes/Forest.gdshader" id="11_f7c5t"]
 [ext_resource type="Texture2D" uid="uid://s3vbqxxh1mpw" path="res://assets/art/creatures/background/BG_Draft_1_Top_Layer.png" id="12_hpon2"]
 [ext_resource type="PackedScene" uid="uid://4crq2uruj6rt" path="res://scenes/creature.tscn" id="12_kf2k2"]
@@ -25,17 +20,6 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4sgv5"]
 shader = ExtResource("11_f7c5t")
 shader_parameter/blur_amount = 2.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_k3d1m"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_4weo8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cghdb"]
 
@@ -64,47 +48,7 @@ grow_vertical = 2
 [node name="Blurr" type="CanvasLayer" parent="." unique_id=258054950]
 script = ExtResource("6_4sgv5")
 
-[node name="Pause Menu" type="CanvasLayer" parent="." unique_id=219764977]
-process_mode = 3
-script = ExtResource("8_adj1i")
-
-[node name="ColorRect" type="ColorRect" parent="Pause Menu" unique_id=49869343]
-material = SubResource("ShaderMaterial_4sgv5")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Pause_Anim" type="AnimatedSprite2D" parent="Pause Menu" unique_id=780029556]
-visible = false
-position = Vector2(960, 540)
-scale = Vector2(0.620308, 0.34823373)
-sprite_frames = SubResource("SpriteFrames_k3d1m")
-
-[node name="Leave Game" type="Button" parent="Pause Menu" unique_id=360076659]
-offset_left = 886.0
-offset_top = 189.0
-offset_right = 1022.0
-offset_bottom = 325.0
-icon = ExtResource("8_vfnn3")
-script = ExtResource("9_vfnn3")
-
-[node name="Settings" type="Button" parent="Pause Menu" unique_id=1485365093]
-offset_left = 897.0
-offset_top = 411.0
-offset_right = 1033.0
-offset_bottom = 547.0
-icon = ExtResource("8_vfnn3")
-script = ExtResource("10_adj1i")
-
-[node name="Return to Game" type="Button" parent="Pause Menu" unique_id=184408184]
-offset_left = 893.0
-offset_top = 622.0
-offset_right = 1029.0
-offset_bottom = 758.0
-icon = ExtResource("8_vfnn3")
-script = ExtResource("11_01kxy")
+[node name="Pause Menu" parent="." unique_id=2065105479 instance=ExtResource("7_r1wi6")]
 
 [node name="Main Background" type="CanvasLayer" parent="." unique_id=1878322158]
 layer = 0

@@ -29,7 +29,7 @@ func _on_area_exited(node: Node2D):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if GameManager._pause_open or GameManager._journal_open or GameManager.journal_animation:
+	if GameManager.ui_block:
 		return
 	if Input.is_action_just_pressed("camera"): 
 		visible = !visible
@@ -55,7 +55,7 @@ func _process(_delta: float) -> void:
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT and GameManager._camera_open:
 			for node in overlapped_areas:
 				if node is not Creature: 
 					continue

@@ -68,3 +68,4 @@ func anim_loop() -> void:
 			await get_tree().create_timer(wait).timeout
 		else:
 			pause()
+			await get_tree().process_frame

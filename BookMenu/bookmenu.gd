@@ -17,13 +17,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_animal_1_pressed() -> void:
-	$TableOfContents.hide()
-	$AnimalPage1.show()
-	$PageTraversal.show()
-	
 					
 
 
@@ -36,9 +29,13 @@ func _on_back_button_pressed() -> void:
 	$AnimalPage6.hide()
 	$PageTraversal.hide()
 	$TableOfContents.show()
-	
-	
-	pass # Replace with function body.
+
+
+func _on_animal_1_pressed() -> void:
+	$TableOfContents.hide()
+	$AnimalPage1.show()
+	$PageTraversal.show()
+	current_page = 1
 
 
 func _on_animal_2_pressed() -> void:
@@ -46,7 +43,7 @@ func _on_animal_2_pressed() -> void:
 	$AnimalPage2.show()
 	$PageTraversal.show()
 	$PageTraversal/Before.show()
-	
+	current_page = 2	
 	pass # Replace with function body.
 
 
@@ -54,6 +51,7 @@ func _on_animal_3_pressed() -> void:
 	$TableOfContents.hide()
 	$AnimalPage3.show()
 	$PageTraversal.show()
+	current_page = 3
 	
 	pass # Replace with function body.
 
@@ -62,13 +60,14 @@ func _on_animal_4_pressed() -> void:
 	$TableOfContents.hide()
 	$AnimalPage4.show()
 	$PageTraversal.show()
-	pass # Replace with function body.
+	current_page = 4
 
 
 func _on_animal_5_pressed() -> void:
 	$TableOfContents.hide()
 	$AnimalPage5.show()
 	$PageTraversal.show()
+	current_page = 5
 	pass # Replace with function body.
 
 
@@ -76,6 +75,7 @@ func _on_animal_6_pressed() -> void:
 	$TableOfContents.hide()
 	$AnimalPage6.show()
 	$PageTraversal.show()
+	current_page = 6
 	pass # Replace with function body.
 	
 func hide_all_pages() -> void:
@@ -104,13 +104,14 @@ func show_current_page() -> void:
 		$AnimalPage6.show()
 
 
-func _on_next_pressed() -> void:
-	if current_page < 6:
-		current_page += 1
-		show_current_page()
-
 
 func _on_before_pressed() -> void:
 	if current_page > 1:
 		current_page -= 1
+		show_current_page()
+
+
+func _on_next_pressed() -> void:
+	if current_page < 6:
+		current_page += 1
 		show_current_page()

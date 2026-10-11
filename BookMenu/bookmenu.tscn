@@ -168,6 +168,7 @@ offset_right = 2082.5625
 offset_bottom = 1293.0
 
 [node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage2" unique_id=201067088]
+visible = false
 position = Vector2(-1354.5625, -661)
 scale = Vector2(0.73039216, 0.62908494)
 texture = ExtResource("4_ma4mm")
@@ -214,6 +215,7 @@ theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
 [node name="AnimalPage3" type="Control" parent="." unique_id=2045009200]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 2042.5625
@@ -433,10 +435,8 @@ theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
 [connection signal="pressed" from="PageTraversal/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="PageTraversal/Next" to="." method="_on_before_pressed"]
-[connection signal="pressed" from="PageTraversal/Next" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="PageTraversal/Before" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="PageTraversal/Before" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PageTraversal/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="PageTraversal/Before" to="." method="_on_before_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 1" to="." method="_on_animal_1_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 2" to="." method="_on_animal_2_pressed"]
 [connection signal="pressed" from="TableOfContents/Animal 3" to="." method="_on_animal_3_pressed"]

@@ -52,10 +52,7 @@ func _when_clicked() -> void:
 	match current_state:
 		State.ZOOMED_OUT:
 			current_state = State.ZOOMED_IN
-			var zoom_rect: Rect2 = Rect2(
-				global_position + collision_position - (collision_size / 2.0),
-				collision_size
-			)
+			var zoom_rect: Rect2 = collision_shape.global_transform * collision_shape.shape.get_rect()
 			camera.transition_to_closeup(zoom_rect)
 			
 		State.ZOOMED_IN:
@@ -72,6 +69,7 @@ func _process(_delta: float) -> void:
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	_update_collision()
 		
 	hitbox.captured.connect(_when_clicked);
 		
@@ -80,10 +78,6 @@ func _ready() -> void:
 
 func anim_loop() -> void:
 	while true:
-		if !GameManager.ui_block:
-			play("default")
-			var wait = randi_range(wait_low, wait_high)
-			await get_tree().create_timer(wait).timeout
-		else:
-			pause()
-			await get_tree().process_frame
+		play("default")
+		var wait = randi_range(wait_low, wait_high)
+		await get_tree().create_timer(wait).timeout

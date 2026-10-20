@@ -31,7 +31,7 @@ editor_draw_limits = true
 script = ExtResource("1_nqrp4")
 
 [node name="CameraLayer" type="CanvasLayer" parent="." unique_id=1481627917]
-layer = 2
+layer = 10
 follow_viewport_enabled = true
 
 [node name="Camera_Anim" type="AnimatedSprite2D" parent="CameraLayer" unique_id=1246582933]

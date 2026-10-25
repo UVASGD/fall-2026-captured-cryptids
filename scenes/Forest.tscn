@@ -182,4 +182,5 @@ offset_left = -26.75
 offset_top = -23.86125
 offset_right = 16.25
 offset_bottom = 23.76375
+mouse_filter = 2
 border_width = 0.0

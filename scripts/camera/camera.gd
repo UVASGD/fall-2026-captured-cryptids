@@ -71,9 +71,11 @@ func _physics_process(_delta: float) -> void:
 		global_position = camera.get_global_mouse_position()
 	_refresh_highlight()
 
-func _unhandled_input(event: InputEvent) -> void:
+# _input, not _unhandled_input: a stray Control over a creature must never swallow captures.
+func _input(event: InputEvent) -> void:
 	if not (event is InputEventMouseButton and event.pressed):
 		return
+	print("Input")
 	if event.button_index != MOUSE_BUTTON_LEFT or not GameManager.can_capture_with_camera():
 		return
 	var creature := _target_creature()

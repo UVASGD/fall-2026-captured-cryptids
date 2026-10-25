@@ -26,6 +26,10 @@ func _ready() -> void:
 	position_smoothing_enabled = false
 	drag_horizontal_enabled = false
 	drag_vertical_enabled = false
+	# Horizontal travel is bounded by WRAP_LEFT/WRAP_RIGHT jumps, not by Camera2D limits;
+	# leaving the limits in place clamps the view and creates dead zones near the edges.
+	limit_left = -10000000
+	limit_right = 10000000
 	target = position
 	if fade_rect:
 		fade_rect.modulate.a = 0.0

@@ -18,33 +18,50 @@ func _on_area_entered(node: Node2D):
 	if creature == null or overlapped_areas.has(creature):
 		return
 	overlapped_areas.append(creature)
-	if visible and not creature.is_captured:
-		_highlight(creature)
+	_refresh_highlight()
 
 func _on_area_exited(node: Node2D):
 	if node is not CreatureHitbox:
 		return
 	var creature: Creature = node.get_parent()
 	overlapped_areas.erase(creature)
-	if creature != null and not creature.is_captured:
+	if is_instance_valid(creature) and not creature.is_captured:
 		creature.modulate = Color.WHITE
+	_refresh_highlight()
 
 func _on_camera_active_changed(is_active: bool) -> void:
 	visible = is_active
-	if is_active:
-		for creature in overlapped_areas:
-			if is_instance_valid(creature) and not creature.is_captured:
-				_highlight(creature)
-	else:
-		_clear_highlights()
+	_refresh_highlight()
 
-func _highlight(creature: Creature) -> void:
-	creature.modulate = Color(1.0 + brightness_modifier, 1.0 + brightness_modifier, 1.0 + brightness_modifier, 1.0)
-
-func _clear_highlights() -> void:
+## The single creature a click would capture: the one closest to the viewfinder centre.
+## While zoomed on a creature, only that creature can be targeted.
+func _target_creature() -> Creature:
+	if not visible:
+		return null
+	var closeup := GameManager.is_camera_closeup_active()
+	var best: Creature = null
+	var best_distance := INF
 	for creature in overlapped_areas:
-		if is_instance_valid(creature) and not creature.is_captured:
-			creature.modulate = Color.WHITE
+		if not is_instance_valid(creature) or creature.is_captured:
+			continue
+		if closeup and creature.current_state != Creature.State.ZOOMED_IN:
+			continue
+		var distance := global_position.distance_squared_to(creature.collision_shape.global_position)
+		if distance < best_distance:
+			best_distance = distance
+			best = creature
+	return best
+
+func _refresh_highlight() -> void:
+	var target := _target_creature()
+	for creature in overlapped_areas:
+		if not is_instance_valid(creature) or creature.is_captured:
+			continue
+		creature.modulate = _highlight_color() if creature == target else Color.WHITE
+
+func _highlight_color() -> Color:
+	var value := 1.0 + brightness_modifier
+	return Color(value, value, value, 1.0)
 
 func _physics_process(_delta: float) -> void:
 	if not GameManager.is_camera_open():
@@ -52,15 +69,15 @@ func _physics_process(_delta: float) -> void:
 	var camera = get_viewport().get_camera_2d()
 	if camera:
 		global_position = camera.get_global_mouse_position()
+	_refresh_highlight()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not (event is InputEventMouseButton and event.pressed):
 		return
 	if event.button_index != MOUSE_BUTTON_LEFT or not GameManager.can_capture_with_camera():
 		return
-	for creature in overlapped_areas:
-		if not is_instance_valid(creature) or creature.is_captured:
-			continue
-		creature._when_clicked()
-		get_viewport().set_input_as_handled()
+	var creature := _target_creature()
+	if creature == null:
 		return
+	creature._when_clicked()
+	get_viewport().set_input_as_handled()

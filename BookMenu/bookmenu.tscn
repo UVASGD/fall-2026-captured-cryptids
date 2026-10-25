@@ -56,7 +56,6 @@ scale = Vector2(0.3008553, 0.28154972)
 texture_normal = ExtResource("3_d42ad")
 
 [node name="TableOfContents" type="Control" parent="." unique_id=811960900]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -123,37 +122,37 @@ text = "Artifacts 1
 
 [node name="Artifacts 2" type="Button" parent="TableOfContents" unique_id=705846320]
 layout_mode = 0
-offset_left = 1086.0
-offset_top = 736.0
-offset_right = 1324.0
-offset_bottom = 981.3316
+offset_left = 1343.0002
+offset_top = 215.0
+offset_right = 1581.0002
+offset_bottom = 460.3316
 rotation = -0.001963821
 text = "Artifacts 2"
 
 [node name="Artifacts 3" type="Button" parent="TableOfContents" unique_id=1911339620]
 layout_mode = 0
-offset_left = 1345.0
-offset_top = 482.0
-offset_right = 1583.0
-offset_bottom = 727.3316
+offset_left = 1084.0
+offset_top = 469.00003
+offset_right = 1322.0
+offset_bottom = 714.33167
 rotation = -0.001963821
 text = "Artifacts 3"
 
 [node name="Artifacts 4" type="Button" parent="TableOfContents" unique_id=478230069]
 layout_mode = 0
-offset_left = 1086.0
-offset_top = 482.0
-offset_right = 1324.0
-offset_bottom = 727.3316
+offset_left = 1342.0001
+offset_top = 467.00003
+offset_right = 1580.0001
+offset_bottom = 712.33167
 rotation = -0.001963821
 text = "Artifacts 4"
 
 [node name="Artifacts 5" type="Button" parent="TableOfContents" unique_id=2115191045]
 layout_mode = 0
-offset_left = 1346.0
-offset_top = 214.0
-offset_right = 1584.0
-offset_bottom = 459.3316
+offset_left = 1084.0
+offset_top = 732.0
+offset_right = 1322.0
+offset_bottom = 977.3316
 rotation = -0.001963821
 text = "Artifacts 5"
 
@@ -499,6 +498,7 @@ theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
 [node name="ArtifactPage1" type="Control" parent="." unique_id=701620406]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

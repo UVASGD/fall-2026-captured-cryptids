@@ -102,7 +102,7 @@ func _test_camera_hitbox_alignment() -> void:
 	var click := InputEventMouseButton.new()
 	click.button_index = MOUSE_BUTTON_LEFT
 	click.pressed = true
-	camera_tool.call("_unhandled_input", click)
+	camera_tool.call("_input", click)
 	_expect(moth_bush.current_state == Creature.State.ZOOMED_IN, "Camera overlap click starts the Moth Bush close-up")
 	GameManager.end_camera_transition()
 	GameManager.set_camera_closeup_active(false)

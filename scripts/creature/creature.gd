@@ -51,17 +51,19 @@ func _when_clicked() -> void:
 	if !camera: return
 	match current_state:
 		State.ZOOMED_OUT:
-			current_state = State.ZOOMED_IN
 			var zoom_rect: Rect2 = collision_shape.global_transform * collision_shape.shape.get_rect()
-			camera.transition_to_closeup(zoom_rect)
+			if camera.transition_to_closeup(zoom_rect):
+				current_state = State.ZOOMED_IN
 			
 		State.ZOOMED_IN:
 			modulate = Color.RED if is_cryptid else Color.GREEN
 			is_captured = true
 			current_state = State.CAPTURED
 			
-			await get_tree().create_timer(0.8).timeout
-			camera.transition_back_to_hallway()
+			# Pause-respecting timers: the exit must not fire while a menu is open.
+			await get_tree().create_timer(0.8, false).timeout
+			while is_inside_tree() and not camera.transition_back_to_hallway():
+				await get_tree().create_timer(0.1, false).timeout
 
 func _process(_delta: float) -> void:
 	pass
@@ -73,11 +75,11 @@ func _ready() -> void:
 		
 	hitbox.captured.connect(_when_clicked);
 		
-	await get_tree().create_timer(randi_range(1,3)).timeout
+	await get_tree().create_timer(randi_range(1,3), false).timeout
 	anim_loop()
 
 func anim_loop() -> void:
-	while true:
+	while is_inside_tree():
 		play("default")
 		var wait = randi_range(wait_low, wait_high)
-		await get_tree().create_timer(wait).timeout
+		await get_tree().create_timer(wait, false).timeout

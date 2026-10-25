@@ -51,9 +51,9 @@ func _process(delta: float) -> void:
 	target.y = clamp(target.y, limit_top, limit_bottom)
 	position = target
 
-func transition_to_closeup(rect: Rect2) -> void:
+func transition_to_closeup(rect: Rect2) -> bool:
 	if _closeup_state != CloseupState.IDLE or not GameManager.begin_camera_transition():
-		return
+		return false
 
 	_closeup_state = CloseupState.ENTERING
 	_pre_closeup_position = position
@@ -73,10 +73,11 @@ func transition_to_closeup(rect: Rect2) -> void:
 	if fade_rect:
 		_transition.tween_property(fade_rect, "modulate:a", 0.0, zoom_duration)
 	_transition.tween_callback(_finish_enter_closeup)
+	return true
 
-func transition_back_to_hallway() -> void:
+func transition_back_to_hallway() -> bool:
 	if _closeup_state != CloseupState.ACTIVE or not GameManager.begin_camera_transition():
-		return
+		return false
 
 	_closeup_state = CloseupState.EXITING
 	_kill_transition()
@@ -89,6 +90,7 @@ func transition_back_to_hallway() -> void:
 	if fade_rect:
 		_transition.parallel().tween_property(fade_rect, "modulate:a", 0.0, zoom_duration)
 	_transition.tween_callback(_finish_exit_closeup)
+	return true
 
 func _calculate_closeup_zoom(rect: Rect2) -> Vector2:
 	var viewport_size := get_viewport_rect().size

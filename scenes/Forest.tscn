@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://dvsohssc1b114"]
 
-[ext_resource type="Script" uid="uid://cdybxvc8s8si6" path="res://scripts/game_manager.gd" id="1_n5rn3"]
 [ext_resource type="Texture2D" uid="uid://b7pi0qqtbp4j6" path="res://assets/art/creatures/background/4_87.png" id="3_cu2fu"]
 [ext_resource type="PackedScene" uid="uid://dapvlr3gs0q5c" path="res://BookMenu/bookmenu.tscn" id="3_rcklr"]
 [ext_resource type="Script" uid="uid://dlcbh40cfvktj" path="res://scripts/journal.gd" id="5_j4pel"]
-[ext_resource type="Script" uid="uid://db3apysl53d6e" path="res://scenes/blurrrrr.gd" id="6_4sgv5"]
 [ext_resource type="PackedScene" uid="uid://1wc44a78b3f4" path="res://scenes/pause_menu.tscn" id="7_r1wi6"]
 [ext_resource type="Shader" uid="uid://bmmwhmrjde04w" path="res://scenes/Forest.gdshader" id="11_f7c5t"]
 [ext_resource type="Texture2D" uid="uid://s3vbqxxh1mpw" path="res://assets/art/creatures/background/BG_Draft_1_Top_Layer.png" id="12_hpon2"]
@@ -22,23 +20,20 @@
 shader = ExtResource("11_f7c5t")
 shader_parameter/blur_amount = 2.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_r1wi6"]
-shader = ExtResource("11_f7c5t")
-shader_parameter/blur_amount = 2.0
-
 [sub_resource type="CanvasTexture" id="CanvasTexture_cghdb"]
 
 [node name="GameRoot" type="Node2D" unique_id=1296171585]
-script = ExtResource("1_n5rn3")
 
 [node name="MainCamera" parent="." unique_id=1470264754 node_paths=PackedStringArray("fade_rect", "main_background_node") instance=ExtResource("75_c8yhr")]
 limit_right = 3828
 fade_rect = NodePath("../CanvasLayer/FadeRect")
 main_background_node = NodePath("../Main Background/Parallax2D2/BackgroundLayer")
+closeup_background_texture = ExtResource("3_cu2fu")
 
 [node name="Battery_Timer" type="Timer" parent="." unique_id=2108566317]
 
 [node name="Journal" type="CanvasLayer" parent="." unique_id=426268938]
+layer = 20
 script = ExtResource("5_j4pel")
 
 [node name="BlurRect" type="ColorRect" parent="Journal" unique_id=1260211425]
@@ -49,26 +44,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="Journal" parent="Journal" unique_id=2056271101 instance=ExtResource("3_rcklr")]
-
-[node name="Blurr" type="CanvasLayer" parent="." unique_id=258054950]
-script = ExtResource("6_4sgv5")
-
-[node name="Pause Menu" parent="." unique_id=2065105479 instance=ExtResource("7_r1wi6")]
-
-[node name="ColorRect" type="ColorRect" parent="Pause Menu" unique_id=1687990744]
+[node name="InputShield" type="Control" parent="Journal" unique_id=1260211426]
 z_index = -1
-material = SubResource("ShaderMaterial_r1wi6")
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0)
+
+[node name="Journal" parent="Journal" unique_id=2056271101 instance=ExtResource("3_rcklr")]
+
+[node name="Pause Menu" parent="." unique_id=2065105479 instance=ExtResource("7_r1wi6")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1512334268]
-layer = 100
+layer = 30
 
 [node name="FadeRect" type="ColorRect" parent="CanvasLayer" unique_id=1235957313]
 modulate = Color(1, 1, 1, 0)
@@ -78,14 +70,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/FadeRect" unique_id=543145382]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_cu2fu")
 
 [node name="Main Background" type="CanvasLayer" parent="." unique_id=1878322158]
 layer = 0
@@ -125,7 +111,6 @@ texture = ExtResource("12_hpon2")
 position = Vector2(-2125, 153)
 sprite_frames = ExtResource("15_cu2fu")
 camera = NodePath("../../../MainCamera")
-has_closeup_transition = null
 collision_position = Vector2(0.58, 0.31)
 collision_size = Vector2(8.46, 7.63)
 
@@ -134,7 +119,6 @@ position = Vector2(-3512, -167)
 sprite_frames = ExtResource("16_albbl")
 frame_progress = 0.7005996
 camera = NodePath("../../../MainCamera")
-has_closeup_transition = null
 collision_position = Vector2(-0.03, 0.08)
 collision_size = Vector2(4.47, 5.32)
 
@@ -143,7 +127,6 @@ position = Vector2(-3052, -330)
 sprite_frames = ExtResource("17_exxfu")
 frame_progress = 0.20215541
 camera = NodePath("../../../MainCamera")
-has_closeup_transition = null
 is_cryptid = true
 collision_position = Vector2(-0.03, 0.08)
 collision_size = Vector2(4.47, 5.32)
@@ -152,7 +135,6 @@ collision_size = Vector2(4.47, 5.32)
 position = Vector2(-404, 14)
 sprite_frames = ExtResource("16_gsjta")
 camera = NodePath("../../../MainCamera")
-has_closeup_transition = null
 collision_position = Vector2(-0.03, -0.18)
 collision_size = Vector2(15.62, 16.31)
 
@@ -161,7 +143,6 @@ position = Vector2(634, 8)
 sprite_frames = ExtResource("17_rjqbj")
 frame_progress = 0.3513475
 camera = NodePath("../../../MainCamera")
-has_closeup_transition = null
 is_cryptid = true
 wait_low = 10
 wait_high = 20
@@ -174,7 +155,6 @@ sprite_frames = ExtResource("16_l4101")
 frame = 20
 frame_progress = 1.0
 camera = NodePath("../../../MainCamera")
-has_closeup_transition = null
 is_cryptid = true
 wait_low = 6
 wait_high = 10
@@ -190,10 +170,3 @@ wait_low = 2
 wait_high = 4
 collision_position = Vector2(-0.6, 0)
 collision_size = Vector2(5.28, 5.69)
-
-[node name="ReferenceRect" type="ReferenceRect" parent="Main Background/CreatureRoot/MothBush" unique_id=1731452003]
-offset_left = -26.75
-offset_top = -23.86125
-offset_right = 16.25
-offset_bottom = 23.76375
-border_width = 0.0

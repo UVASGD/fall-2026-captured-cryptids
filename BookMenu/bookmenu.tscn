@@ -128,7 +128,7 @@ offset_top = 736.0
 offset_right = 1324.0
 offset_bottom = 981.3316
 rotation = -0.001963821
-text = "Artifacts 5"
+text = "Artifacts 2"
 
 [node name="Artifacts 3" type="Button" parent="TableOfContents" unique_id=1911339620]
 layout_mode = 0
@@ -137,8 +137,7 @@ offset_top = 482.0
 offset_right = 1583.0
 offset_bottom = 727.3316
 rotation = -0.001963821
-text = "Artifacts 4
-"
+text = "Artifacts 3"
 
 [node name="Artifacts 4" type="Button" parent="TableOfContents" unique_id=478230069]
 layout_mode = 0
@@ -147,8 +146,7 @@ offset_top = 482.0
 offset_right = 1324.0
 offset_bottom = 727.3316
 rotation = -0.001963821
-text = "Artifacts 3
-"
+text = "Artifacts 4"
 
 [node name="Artifacts 5" type="Button" parent="TableOfContents" unique_id=2115191045]
 layout_mode = 0
@@ -157,8 +155,7 @@ offset_top = 214.0
 offset_right = 1584.0
 offset_bottom = 459.3316
 rotation = -0.001963821
-text = "Artifacts 1
-"
+text = "Artifacts 5"
 
 [node name="Artifacts 6" type="Button" parent="TableOfContents" unique_id=69630162]
 layout_mode = 0

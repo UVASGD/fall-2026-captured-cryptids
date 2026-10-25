@@ -7,7 +7,8 @@ var camera_start_position: Vector2
 
 func _ready():
 	start_position = global_position
-	camera_start_position = get_viewport().get_camera_2d().global_position
+	var camera := get_viewport().get_camera_2d()
+	camera_start_position = camera.global_position if camera else Vector2.ZERO
 
 func _process(_delta):
 	var camera = get_viewport().get_camera_2d()

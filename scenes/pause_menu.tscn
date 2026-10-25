@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bbqx8d1ttcrvb" path="res://assets/art/Pause_Menu_Placeholder.png" id="3_knqa7"]
 [ext_resource type="Texture2D" uid="uid://wbwrj682au44" path="res://icon.svg" id="4_71k7c"]
 [ext_resource type="Script" uid="uid://bhqtbki340m5p" path="res://scripts/ui/leave_game_button.gd" id="5_cmnsq"]
-[ext_resource type="Script" uid="uid://dx2jljqarn24q" path="res://scripts/ui/return_to_game_button.gd" id="7_1rgno"]
 [ext_resource type="PackedScene" uid="uid://ncusagr7wieq" path="res://scenes/settings_menu.tscn" id="8_88e76"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4sgv5"]
@@ -25,6 +24,7 @@ animations = [{
 
 [node name="Pause Menu" type="CanvasLayer" unique_id=2065105479]
 process_mode = 3
+layer = 40
 script = ExtResource("1_1s2dm")
 
 [node name="PauseMenu" type="Control" parent="." unique_id=849510693]
@@ -35,9 +35,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="InputShield" type="Control" parent="PauseMenu" unique_id=155087396]
+mouse_filter = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="ColorRect" type="ColorRect" parent="PauseMenu" unique_id=155087397]
-visible = false
 material = SubResource("ShaderMaterial_4sgv5")
+mouse_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +54,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Pause_Anim" type="AnimatedSprite2D" parent="PauseMenu" unique_id=56146671]
-visible = false
 position = Vector2(960, 540)
 scale = Vector2(0.620308, 0.34823373)
 sprite_frames = SubResource("SpriteFrames_k3d1m")
@@ -68,14 +75,13 @@ offset_right = 1033.0
 offset_bottom = 547.0
 icon = ExtResource("4_71k7c")
 
-[node name="Return to Game" type="Button" parent="PauseMenu" unique_id=689721233]
+[node name="ReturnToGame" type="Button" parent="PauseMenu" unique_id=689721233]
 layout_mode = 0
 offset_left = 893.0
 offset_top = 622.0
 offset_right = 1029.0
 offset_bottom = 758.0
 icon = ExtResource("4_71k7c")
-script = ExtResource("7_1rgno")
 
 [node name="SettingsMenu" parent="." unique_id=771235617 instance=ExtResource("8_88e76")]
 visible = false

@@ -31,6 +31,10 @@ window/stretch/aspect="ignore"
 
 project/assembly_name="Captured Cryptids"
 
+[gui]
+
+theme/custom_font="uid://dw2v2tf1j0yxc"
+
 [input]
 
 ui_left={

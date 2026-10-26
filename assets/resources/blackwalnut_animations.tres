@@ -29,6 +29,9 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("23_h38q5")
+}, {
+"duration": 1.0,
 "texture": ExtResource("1_tmyyy")
 }, {
 "duration": 1.0,
@@ -93,11 +96,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("22_mpaql")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_h38q5")
 }],
-"loop": true,
+"loop": false,
 "name": &"cryptid",
 "speed": 8.0
 }, {
@@ -171,7 +171,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("24_cq1k7")
 }],
-"loop": true,
+"loop": false,
 "name": &"normal",
 "speed": 8.0
 }]

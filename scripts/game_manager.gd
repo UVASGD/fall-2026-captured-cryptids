@@ -11,6 +11,9 @@ signal camera_transition_changed(is_active: bool)
 signal camera_closeup_changed(is_active: bool)
 signal state_changed
 
+# Creature Scene
+const CREATURE_SCENE: PackedScene = preload("res://scenes/creature.tscn")
+
 # Global camera progress
 var pictures_taken: int = 0
 var pictures_remaining: int = 10
@@ -36,6 +39,17 @@ var _camera_closeup_active := false
 func _ready() -> void:
 	# This node must continue receiving Escape and journal input while the tree is paused.
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	
+	# Placeholder spawns, in the future put these spawns into actual levels
+	await get_tree().process_frame
+	spawn_creature("deer", false, false, -2125.0, 153.0)
+	spawn_creature("deer", true, false, -1289.0, 160.0)
+	spawn_creature("palemoth", false, false, -3512.0, -167.0)
+	spawn_creature("palemoth", true, false, -3052.0, -330.0)
+	spawn_creature("blackwalnut", false, false, -404.0, 14.0)
+	spawn_creature("blackwalnut", true, false, 634.0, 8.0)
+	# spawn_creature("mothbush", false, true, -2800.0, 251.89)
+	# Not touching mothbush, trying to spawn it breaks the camera zoom in
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_pressed():
@@ -194,3 +208,18 @@ func set_camera_closeup_active(is_active: bool) -> void:
 
 func _sync_scene_tree_pause() -> void:
 	get_tree().paused = _pause_open or _journal_open
+	
+func spawn_creature(creature_name: String, cryptid: bool, close_up: bool, x: float, y: float) -> Creature:
+	var root := get_tree().current_scene.find_child("CreatureRoot", true, false)
+	if root == null:
+		return null
+	
+	var frames_path := "res://assets/resources/" + creature_name + "_animations.tres"
+	var creature: Creature = CREATURE_SCENE.instantiate()
+	creature.creature_name = creature_name
+	creature.is_cryptid = cryptid
+	creature.has_closeup_transition = close_up
+	creature.sprite_frames = load(frames_path)
+	creature.position = Vector2(x, y)
+	root.add_child(creature)
+	return creature

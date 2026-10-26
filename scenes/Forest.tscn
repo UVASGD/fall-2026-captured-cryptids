@@ -7,13 +7,7 @@
 [ext_resource type="Shader" uid="uid://bmmwhmrjde04w" path="res://scenes/Forest.gdshader" id="11_f7c5t"]
 [ext_resource type="Texture2D" uid="uid://s3vbqxxh1mpw" path="res://assets/art/creatures/background/BG_Draft_1_Top_Layer.png" id="12_hpon2"]
 [ext_resource type="PackedScene" uid="uid://4crq2uruj6rt" path="res://scenes/creature.tscn" id="12_kf2k2"]
-[ext_resource type="SpriteFrames" uid="uid://c8b20pdmkotbg" path="res://assets/resources/deer_normal_animation.tres" id="15_cu2fu"]
-[ext_resource type="SpriteFrames" uid="uid://du4ecxbmuseba" path="res://assets/resources/palemoth_normal_animation.tres" id="16_albbl"]
-[ext_resource type="SpriteFrames" uid="uid://cytfkh5j2e3dg" path="res://assets/resources/blackwalnut_normal_animation.tres" id="16_gsjta"]
-[ext_resource type="SpriteFrames" uid="uid://bhkxjxq02gxlb" path="res://assets/resources/deer_cryptid_animation.tres" id="16_l4101"]
-[ext_resource type="SpriteFrames" uid="uid://dvsv2vg4u1ope" path="res://assets/resources/palemoth_cryptid_animation.tres" id="17_exxfu"]
-[ext_resource type="SpriteFrames" uid="uid://ctoe2ahfvvrxy" path="res://assets/resources/mothbush_normal_animation.tres" id="17_gsjta"]
-[ext_resource type="SpriteFrames" uid="uid://gpcrun1g4c4v" path="res://assets/resources/balckwalnut_cryptid_animation.tres" id="17_rjqbj"]
+[ext_resource type="SpriteFrames" uid="uid://ctoe2ahfvvrxy" path="res://assets/resources/mothbush_animations.tres" id="17_gsjta"]
 [ext_resource type="PackedScene" uid="uid://dijtpgj3j3r2n" path="res://scenes/main_camera.tscn" id="75_c8yhr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4sgv5"]
@@ -107,63 +101,10 @@ texture = ExtResource("12_hpon2")
 
 [node name="CreatureRoot" type="Node2D" parent="Main Background" unique_id=1254769416]
 
-[node name="Deer_Normal" parent="Main Background/CreatureRoot" unique_id=1430666836 node_paths=PackedStringArray("camera") instance=ExtResource("12_kf2k2")]
-position = Vector2(-2125, 153)
-sprite_frames = ExtResource("15_cu2fu")
-camera = NodePath("../../../MainCamera")
-collision_position = Vector2(0.58, 0.31)
-collision_size = Vector2(8.46, 7.63)
-
-[node name="PaleMoth_Normal" parent="Main Background/CreatureRoot" unique_id=1541800983 node_paths=PackedStringArray("camera") instance=ExtResource("12_kf2k2")]
-position = Vector2(-3512, -167)
-sprite_frames = ExtResource("16_albbl")
-frame_progress = 0.7005996
-camera = NodePath("../../../MainCamera")
-collision_position = Vector2(-0.03, 0.08)
-collision_size = Vector2(4.47, 5.32)
-
-[node name="PaleMoth_Cryptid" parent="Main Background/CreatureRoot" unique_id=1947533229 node_paths=PackedStringArray("camera") instance=ExtResource("12_kf2k2")]
-position = Vector2(-3052, -330)
-sprite_frames = ExtResource("17_exxfu")
-frame_progress = 0.20215541
-camera = NodePath("../../../MainCamera")
-is_cryptid = true
-collision_position = Vector2(-0.03, 0.08)
-collision_size = Vector2(4.47, 5.32)
-
-[node name="BlackWalnut_Normal" parent="Main Background/CreatureRoot" unique_id=2040933544 node_paths=PackedStringArray("camera") instance=ExtResource("12_kf2k2")]
-position = Vector2(-404, 14)
-sprite_frames = ExtResource("16_gsjta")
-camera = NodePath("../../../MainCamera")
-collision_position = Vector2(-0.03, -0.18)
-collision_size = Vector2(15.62, 16.31)
-
-[node name="BlackWalnut_Cryptid" parent="Main Background/CreatureRoot" unique_id=1996072455 node_paths=PackedStringArray("camera") instance=ExtResource("12_kf2k2")]
-position = Vector2(634, 8)
-sprite_frames = ExtResource("17_rjqbj")
-frame_progress = 0.3513475
-camera = NodePath("../../../MainCamera")
-is_cryptid = true
-wait_low = 10
-wait_high = 20
-collision_position = Vector2(0.28, -0.14)
-collision_size = Vector2(14.86, 16.23)
-
-[node name="Deer_Cryptid" parent="Main Background/CreatureRoot" unique_id=1862211854 node_paths=PackedStringArray("camera") instance=ExtResource("12_kf2k2")]
-position = Vector2(-1289, 160)
-sprite_frames = ExtResource("16_l4101")
-frame = 20
-frame_progress = 1.0
-camera = NodePath("../../../MainCamera")
-is_cryptid = true
-wait_low = 6
-wait_high = 10
-collision_position = Vector2(0.43, 0.39)
-collision_size = Vector2(8.87, 7.99)
-
 [node name="MothBush" parent="Main Background/CreatureRoot" unique_id=561356661 node_paths=PackedStringArray("camera") instance=ExtResource("12_kf2k2")]
 position = Vector2(-2800, 251.89)
 sprite_frames = ExtResource("17_gsjta")
+animation = &"normal"
 camera = NodePath("../../../MainCamera")
 has_closeup_transition = true
 wait_low = 2

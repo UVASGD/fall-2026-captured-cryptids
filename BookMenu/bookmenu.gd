@@ -43,8 +43,8 @@ func show_page(page_index: int) -> void:
 	_hide_all_pages()
 	pages[current_page].show()
 	page_traversal.show()
-	previous_button.disabled = current_page == FIRST_PAGE
-	next_button.disabled = current_page == LAST_PAGE
+	previous_button.visible = current_page != FIRST_PAGE
+	next_button.visible = current_page != LAST_PAGE
 
 func _hide_all_pages() -> void:
 	for page in pages:
@@ -96,3 +96,4 @@ func _on_artifacts_5_pressed() -> void:
 
 func _on_artifacts_6_pressed() -> void:
 	show_page(11)
+	

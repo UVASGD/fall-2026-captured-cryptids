@@ -21,6 +21,20 @@ position = Vector2(1020.56256, 626.99994)
 scale = Vector2(4.0277343, 4.6806283)
 texture = ExtResource("2_op5li")
 
+[node name="Artifacts Tab" type="Button" parent="." unique_id=943178568]
+offset_left = 1631.0
+offset_top = 475.0
+offset_right = 1766.0
+offset_bottom = 579.0
+text = "Aritfact Tab"
+
+[node name="Animal Tab" type="Button" parent="." unique_id=2143118204]
+offset_left = 1631.0
+offset_top = 354.0
+offset_right = 1766.0
+offset_bottom = 458.0
+text = "Creature Tab"
+
 [node name="PageTraversal" type="Control" parent="." unique_id=1888898136]
 visible = false
 layout_mode = 3
@@ -670,6 +684,8 @@ offset_bottom = -184.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Name*"
 
+[connection signal="pressed" from="Artifacts Tab" to="." method="_on_artifacts_tab_pressed"]
+[connection signal="pressed" from="Animal Tab" to="." method="_on_animal_tab_pressed"]
 [connection signal="pressed" from="PageTraversal/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PageTraversal/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="PageTraversal/Before" to="." method="_on_before_pressed"]

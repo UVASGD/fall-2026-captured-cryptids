@@ -61,6 +61,7 @@ func _on_next_pressed() -> void:
 	if current_page < LAST_PAGE:
 		show_page(current_page + 1)
 
+#page flip function
 func _on_animal_1_pressed() -> void:
 	show_page(0)
 
@@ -96,4 +97,10 @@ func _on_artifacts_5_pressed() -> void:
 
 func _on_artifacts_6_pressed() -> void:
 	show_page(11)
+
+#tabs code
+func _on_artifacts_tab_pressed() -> void:
+	show_page(7)
 	
+func _on_animal_tab_pressed() -> void:
+	show_page(0)

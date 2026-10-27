@@ -48,8 +48,7 @@ func _ready() -> void:
 	spawn_creature("palemoth", true, false, -3052.0, -330.0)
 	spawn_creature("blackwalnut", false, false, -404.0, 14.0)
 	spawn_creature("blackwalnut", true, false, 634.0, 8.0)
-	# spawn_creature("mothbush", false, true, -2800.0, 251.89)
-	# Not touching mothbush, trying to spawn it breaks the camera zoom in
+	spawn_creature("mothbush", false, true, -2800.0, 251.89)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_pressed():
@@ -223,7 +222,6 @@ func spawn_creature(creature_name: String, cryptid: bool, close_up: bool, x: flo
 	creature.position = Vector2(x, y)
 	
 	# Hardcoded Camera Hitboxes:
-	var shape_node = creature.get_node("Hitbox/CollisionShape2D")
 	var hitbox_x: float
 	var hitbox_y: float
 	var rectangle_x: float

@@ -45,21 +45,17 @@ func _update_collision():
 func _when_clicked() -> void:
 	if Engine.is_editor_hint(): return
 	
-	if is_cryptid:
-		GameManager.recorded_cryptids.append(creature_name)
-	else:
-		GameManager.recorded_creatures.append(creature_name)
-	print(GameManager.recorded_creatures)
-	print(GameManager.recorded_cryptids)
-	
 	# 1. PATH FOR NORMAL CREATURES (Only highlight, do NOT touch the camera)
 	if !has_closeup_transition:
 		modulate = Color.RED if is_cryptid else Color.GREEN
+		record_capture()
 		is_captured = true
 		set_revealed(true)
 		return # Stop here so the camera isn't affected
 
 	# 2. PATH FOR SPECIAL MOTHBUSH (Use the camera transition state machine)
+	if !camera:
+		camera = get_viewport().get_camera_2d()
 	if !camera: return
 	match current_state:
 		State.ZOOMED_OUT:
@@ -69,6 +65,7 @@ func _when_clicked() -> void:
 			
 		State.ZOOMED_IN:
 			modulate = Color.RED if is_cryptid else Color.GREEN
+			record_capture()
 			is_captured = true
 			current_state = State.CAPTURED
 			
@@ -76,6 +73,11 @@ func _when_clicked() -> void:
 			await get_tree().create_timer(0.8, false).timeout
 			while is_inside_tree() and not camera.transition_back_to_hallway():
 				await get_tree().create_timer(0.1, false).timeout
+
+func record_capture() -> void:
+	var list: Array = GameManager.recorded_cryptids if is_cryptid else GameManager.recorded_creatures
+	if not list.has(creature_name):
+		list.append(creature_name)
 
 func _process(_delta: float) -> void:
 	pass

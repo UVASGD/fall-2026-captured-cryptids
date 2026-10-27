@@ -6,8 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://1wc44a78b3f4" path="res://scenes/pause_menu.tscn" id="7_r1wi6"]
 [ext_resource type="Shader" uid="uid://bmmwhmrjde04w" path="res://scenes/Forest.gdshader" id="11_f7c5t"]
 [ext_resource type="Texture2D" uid="uid://s3vbqxxh1mpw" path="res://assets/art/creatures/background/BG_Draft_1_Top_Layer.png" id="12_hpon2"]
-[ext_resource type="PackedScene" uid="uid://4crq2uruj6rt" path="res://scenes/creature.tscn" id="12_kf2k2"]
-[ext_resource type="SpriteFrames" uid="uid://ctoe2ahfvvrxy" path="res://assets/resources/mothbush_animations.tres" id="17_gsjta"]
 [ext_resource type="PackedScene" uid="uid://dijtpgj3j3r2n" path="res://scenes/main_camera.tscn" id="75_c8yhr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4sgv5"]
@@ -100,14 +98,3 @@ scale = Vector2(8, 8)
 texture = ExtResource("12_hpon2")
 
 [node name="CreatureRoot" type="Node2D" parent="Main Background" unique_id=1254769416]
-
-[node name="MothBush" parent="Main Background/CreatureRoot" unique_id=561356661 node_paths=PackedStringArray("camera") instance=ExtResource("12_kf2k2")]
-position = Vector2(-2800, 251.89)
-sprite_frames = ExtResource("17_gsjta")
-animation = &"normal"
-camera = NodePath("../../../MainCamera")
-has_closeup_transition = true
-wait_low = 2
-wait_high = 4
-collision_position = Vector2(-0.6, 0)
-collision_size = Vector2(5.28, 5.69)

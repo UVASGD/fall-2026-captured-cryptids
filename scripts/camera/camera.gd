@@ -27,6 +27,7 @@ func _on_area_exited(node: Node2D):
 	overlapped_areas.erase(creature)
 	if is_instance_valid(creature) and not creature.is_captured:
 		creature.modulate = Color.WHITE
+		creature.set_revealed(false)
 	_refresh_highlight()
 
 func _on_camera_active_changed(is_active: bool) -> void:
@@ -57,7 +58,9 @@ func _refresh_highlight() -> void:
 	for creature in overlapped_areas:
 		if not is_instance_valid(creature) or creature.is_captured:
 			continue
-		creature.modulate = _highlight_color() if creature == target else Color.WHITE
+		var is_target := creature == target
+		creature.modulate = _highlight_color() if is_target else Color.WHITE
+		creature.set_revealed(is_target)
 
 func _highlight_color() -> Color:
 	var value := 1.0 + brightness_modifier

@@ -47,9 +47,6 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gfo5w")
-}, {
-"duration": 1.0,
 "texture": ExtResource("2_topwf")
 }, {
 "duration": 1.0,
@@ -108,15 +105,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("21_6ntrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_gfo5w")
 }],
 "loop": false,
 "name": &"cryptid",
 "speed": 8.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("22_fv2bd")
-}, {
 "duration": 1.0,
 "texture": ExtResource("23_8ubu6")
 }, {
@@ -176,6 +173,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("42_j8t85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_fv2bd")
 }],
 "loop": false,
 "name": &"normal",

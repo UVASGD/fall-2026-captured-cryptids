@@ -221,5 +221,35 @@ func spawn_creature(creature_name: String, cryptid: bool, close_up: bool, x: flo
 	creature.has_closeup_transition = close_up
 	creature.sprite_frames = load(frames_path)
 	creature.position = Vector2(x, y)
+	
+	# Hardcoded Camera Hitboxes:
+	var shape_node = creature.get_node("Hitbox/CollisionShape2D")
+	var hitbox_x: float
+	var hitbox_y: float
+	var rectangle_x: float
+	var rectangle_y: float
+	if creature_name == "deer":
+		hitbox_x = 1.117
+		hitbox_y = 0.352
+		rectangle_x = 6.609
+		rectangle_y = 7.547
+	elif creature_name == "palemoth":
+		hitbox_x = 0.121
+		hitbox_y = 0.137
+		rectangle_x = 4.281
+		rectangle_y = 5.516
+	elif creature_name == "blackwalnut":
+		hitbox_x = 0.063
+		hitbox_y = 0.0
+		rectangle_x = 4.281
+		rectangle_y = 10.813
+	elif creature_name == "mothbush":
+		hitbox_x = -0.066
+		hitbox_y = 0.098
+		rectangle_x = 3.875
+		rectangle_y = 5.391
+	creature.collision_size = Vector2(rectangle_x, rectangle_y)
+	creature.collision_position = Vector2(hitbox_x, hitbox_y)
+	
 	root.add_child(creature)
 	return creature

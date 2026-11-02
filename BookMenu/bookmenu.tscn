@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dcyt3oodmbuph" path="res://BookMenu/images (7).jpeg" id="11_qih02"]
 
 [node name="Journal" type="Node2D" unique_id=2056271101]
+scale = Vector2(0.125, 0.125)
 script = ExtResource("1_am6ud")
 
 [node name="JournalPlaceholder" type="Sprite2D" parent="." unique_id=1115377318]

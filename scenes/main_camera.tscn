@@ -19,10 +19,10 @@ animations = [{
 radius = 178.16425
 
 [node name="WorldCamera" type="Camera2D" unique_id=1470264754]
-limit_left = -3840
-limit_top = -540
-limit_right = 3840
-limit_bottom = 540
+limit_left = -480
+limit_top = -68
+limit_right = 480
+limit_bottom = 68
 drag_left_margin = 0.0
 drag_top_margin = 0.0
 drag_right_margin = 0.0
@@ -35,7 +35,9 @@ layer = 10
 follow_viewport_enabled = true
 
 [node name="Camera_Anim" type="AnimatedSprite2D" parent="CameraLayer" unique_id=1246582933]
-position = Vector2(953, 506)
+position = Vector2(119, 63)
+scale = Vector2(0.125, 0.125)
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_05hq6")
 script = ExtResource("2_h2pog")
 

@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://ncusagr7wieq"]
 
+[ext_resource type="Texture2D" uid="uid://8eu8ft7oayhu" path="res://assets/art/ui/PauseBackground.png" id="1_05p07"]
+[ext_resource type="Script" uid="uid://gpjv00ncsbin" path="res://scripts/ui/settings_menu.gd" id="1_cr101"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cr101"]
+texture = ExtResource("1_05p07")
+
 [node name="SettingsMenu" type="Control" unique_id=771235617]
 layout_mode = 3
 anchors_preset = 15
@@ -7,17 +13,90 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cr101")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1629773115]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -320.0
-offset_right = 640.0
-offset_bottom = 320.0
-grow_horizontal = 2
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_right = -3.0517578e-05
+grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cr101")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1027920330]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=812128758]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1037801168]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Game Options"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1422865816]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=511413508]
+layout_mode = 2
+text = "Static"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2109209424]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StaticToggle" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1381535595]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=491533042]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1037428483]
+layout_mode = 2
+text = "Music"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=536512305]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MusicSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=687235399]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1107445955]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1027132092]
+layout_mode = 2
+text = "Sounds"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=480862146]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SoundSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=192503392]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="ExitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=996093717]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Done"

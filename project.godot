@@ -21,10 +21,10 @@ GameManager="*uid://cdybxvc8s8si6"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=240
+window/size/viewport_height=135
 window/size/mode=3
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 
 [dotnet]
@@ -33,6 +33,7 @@ project/assembly_name="Captured Cryptids"
 
 [gui]
 
+theme/custom="uid://bjsff573etqot"
 theme/custom_font="uid://dw2v2tf1j0yxc"
 
 [input]
@@ -114,6 +115,7 @@ pan_right={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

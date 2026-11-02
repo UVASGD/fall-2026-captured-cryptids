@@ -81,7 +81,7 @@ func _test_camera_hitbox_alignment() -> void:
 	var moth_bush = CreatureScene.instantiate()
 	moth_bush.sprite_frames = MothBushFrames
 	moth_bush.position = Vector2.ZERO
-	moth_bush.scale = Vector2(8.0, 8.0)
+	moth_bush.scale = Vector2.ONE
 	moth_bush.camera = camera
 	moth_bush.has_closeup_transition = true
 	moth_bush.collision_position = Vector2(-0.6, 0.0)

@@ -1,6 +1,6 @@
 extends Camera2D
 
-@export var follow_speed_keys := 750.0
+@export var follow_speed_keys := 94.0
 @export var zoom_duration := 0.5
 @export_range(1.0, 2.0, 0.05) var closeup_framing_margin := 1.2
 @export var minimum_closeup_zoom := 0.5
@@ -9,8 +9,8 @@ extends Camera2D
 @export var main_background_node: Sprite2D
 @export var closeup_background_texture: Texture2D
 
-const WRAP_LEFT := -3500.0
-const WRAP_RIGHT := 3500.0
+const WRAP_LEFT := -600
+const WRAP_RIGHT := 600
 
 enum CloseupState { IDLE, ENTERING, ACTIVE, EXITING }
 

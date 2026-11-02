@@ -2,8 +2,8 @@ extends CanvasLayer
 
 @onready var settings_menu: Control = $SettingsMenu
 @onready var pause_menu: Control = $PauseMenu
-@onready var settings_button: Button = $PauseMenu/Settings
-@onready var return_button: Button = $PauseMenu/ReturnToGame
+@onready var settings_button: Button = $%Settings
+@onready var return_button: Button = $%ReturnToGame
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS

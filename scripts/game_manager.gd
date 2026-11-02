@@ -33,6 +33,11 @@ var _camera_open := false
 var _camera_transitioning := false
 var _camera_closeup_active := false
 
+# Global game settings (controlled by options menu)
+var _static_toggle := true
+var _music_level: float = 0.0
+var _sound_level: float = 0.0
+
 func _ready() -> void:
 	# This node must continue receiving Escape and journal input while the tree is paused.
 	process_mode = Node.PROCESS_MODE_ALWAYS

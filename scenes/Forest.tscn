@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dvsohssc1b114"]
 
+[ext_resource type="Script" uid="uid://dewhevkf646e0" path="res://scenes/forest.gd" id="1_e0x3u"]
 [ext_resource type="Texture2D" uid="uid://b7pi0qqtbp4j6" path="res://assets/art/creatures/background/4_87.png" id="3_cu2fu"]
 [ext_resource type="PackedScene" uid="uid://dapvlr3gs0q5c" path="res://BookMenu/bookmenu.tscn" id="3_rcklr"]
 [ext_resource type="Script" uid="uid://dlcbh40cfvktj" path="res://scripts/journal.gd" id="5_j4pel"]
 [ext_resource type="PackedScene" uid="uid://1wc44a78b3f4" path="res://scenes/pause_menu.tscn" id="7_r1wi6"]
+[ext_resource type="AudioStream" uid="uid://dxm8x6yep3hk1" path="res://assets/SoundTracks/NormalSoundingCCLevel.wav" id="9_1qwms"]
 [ext_resource type="Shader" uid="uid://bmmwhmrjde04w" path="res://scenes/Forest.gdshader" id="11_f7c5t"]
 [ext_resource type="Texture2D" uid="uid://s3vbqxxh1mpw" path="res://assets/art/creatures/background/BG_Draft_1_Top_Layer.png" id="12_hpon2"]
 [ext_resource type="PackedScene" uid="uid://dijtpgj3j3r2n" path="res://scenes/main_camera.tscn" id="75_c8yhr"]
@@ -16,6 +18,7 @@ shader_parameter/blur_amount = 2.0
 
 [node name="GameRoot" type="Node2D" unique_id=1296171585]
 position = Vector2(-2, 0)
+script = ExtResource("1_e0x3u")
 
 [node name="MainCamera" parent="." unique_id=1470264754 node_paths=PackedStringArray("fade_rect", "main_background_node") instance=ExtResource("75_c8yhr")]
 limit_right = 3828
@@ -99,3 +102,8 @@ scale = Vector2(8, 8)
 texture = ExtResource("12_hpon2")
 
 [node name="CreatureRoot" type="Node2D" parent="Main Background" unique_id=1254769416]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=316929755]
+stream = ExtResource("9_1qwms")
+volume_db = 10.947
+autoplay = true

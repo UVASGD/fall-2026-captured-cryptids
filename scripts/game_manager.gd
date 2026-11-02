@@ -11,6 +11,9 @@ signal camera_transition_changed(is_active: bool)
 signal camera_closeup_changed(is_active: bool)
 signal state_changed
 
+# Creature Scene
+const CREATURE_SCENE: PackedScene = preload("res://scenes/creature.tscn")
+
 # Global camera progress
 var pictures_taken: int = 0
 var pictures_remaining: int = 10
@@ -41,6 +44,16 @@ var _sound_level: float = 0.0
 func _ready() -> void:
 	# This node must continue receiving Escape and journal input while the tree is paused.
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	
+	# Placeholder spawns, in the future put these spawns into actual levels
+	await get_tree().process_frame
+	spawn_creature("deer", false, false, -470.0, 24.0)
+	spawn_creature("deer", true, false, -122.0, 14.0)
+	spawn_creature("palemoth", false, false, -670.0, -1.0)
+	spawn_creature("palemoth", true, false, -616.0, -65.0)
+	spawn_creature("blackwalnut", false, false, -355.0, -17.0)
+	spawn_creature("blackwalnut", true, false, -218.0, -17.0)
+	spawn_creature("mothbush", false, true, -546.0, 7.0)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_pressed():
@@ -199,3 +212,47 @@ func set_camera_closeup_active(is_active: bool) -> void:
 
 func _sync_scene_tree_pause() -> void:
 	get_tree().paused = _pause_open or _journal_open
+	
+func spawn_creature(creature_name: String, cryptid: bool, close_up: bool, x: float, y: float) -> Creature:
+	var root := get_tree().current_scene.find_child("CreatureRoot", true, false)
+	if root == null:
+		return null
+	
+	var frames_path := "res://assets/resources/" + creature_name + "_animations.tres"
+	var creature: Creature = CREATURE_SCENE.instantiate()
+	creature.creature_name = creature_name
+	creature.is_cryptid = cryptid
+	creature.has_closeup_transition = close_up
+	creature.sprite_frames = load(frames_path)
+	creature.position = Vector2(x, y)
+	
+	# Hardcoded Camera Hitboxes:
+	var hitbox_x: float
+	var hitbox_y: float
+	var rectangle_x: float
+	var rectangle_y: float
+	if creature_name == "deer":
+		hitbox_x = 1.117
+		hitbox_y = 0.352
+		rectangle_x = 6.609
+		rectangle_y = 7.547
+	elif creature_name == "palemoth":
+		hitbox_x = 0.121
+		hitbox_y = 0.137
+		rectangle_x = 4.281
+		rectangle_y = 5.516
+	elif creature_name == "blackwalnut":
+		hitbox_x = 0.063
+		hitbox_y = 0.0
+		rectangle_x = 4.281
+		rectangle_y = 10.813
+	elif creature_name == "mothbush":
+		hitbox_x = -0.066
+		hitbox_y = 0.098
+		rectangle_x = 3.875
+		rectangle_y = 5.391
+	creature.collision_size = Vector2(rectangle_x, rectangle_y)
+	creature.collision_position = Vector2(hitbox_x, hitbox_y)
+	
+	root.add_child(creature)
+	return creature

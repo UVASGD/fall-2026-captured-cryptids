@@ -6,7 +6,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0oq0"]
 resource_local_to_scene = true
-size = Vector2(10, 10)
 
 [node name="CreatureAnimatedSprite2D" type="AnimatedSprite2D" unique_id=1541800983]
 texture_filter = 1
@@ -19,4 +18,5 @@ scale = Vector2(8, 8)
 script = ExtResource("2_mmtec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1763225228]
+position = Vector2(-0.375, -0.125)
 shape = SubResource("RectangleShape2D_i0oq0")

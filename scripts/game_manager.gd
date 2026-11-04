@@ -46,14 +46,17 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	# Placeholder spawns, in the future put these spawns into actual levels
+	# Spawn Creature parameters: Creature Name, Cryptid?, Zoom in?, x, y
 	await get_tree().process_frame
-	spawn_creature("deer", false, false, -470.0, 24.0)
-	spawn_creature("deer", true, false, -122.0, 14.0)
+	spawn_creature("deer", false, false, -470.0, 15.0)
+	spawn_creature("deer", true, false, -122.0, 15.0)
 	spawn_creature("palemoth", false, false, -670.0, -1.0)
 	spawn_creature("palemoth", true, false, -616.0, -65.0)
-	spawn_creature("blackwalnut", false, false, -355.0, -17.0)
-	spawn_creature("blackwalnut", true, false, -218.0, -17.0)
-	spawn_creature("mothbush", false, true, -546.0, 7.0)
+	spawn_creature("blackwalnut", false, false, -355.0, -8.0)
+	spawn_creature("blackwalnut", true, false, -218.0, -8.0)
+	spawn_creature("mothbush", false, true, -546.0, 20.0)
+	spawn_creature("owl", false, false, -275.0, 25.0)
+	spawn_creature("owl", true, false, -400.0, 25.0)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_pressed():
@@ -251,6 +254,11 @@ func spawn_creature(creature_name: String, cryptid: bool, close_up: bool, x: flo
 		hitbox_y = 0.098
 		rectangle_x = 3.875
 		rectangle_y = 5.391
+	elif creature_name == "owl":
+		hitbox_x = -0.375
+		hitbox_y = -0.125
+		rectangle_x = 5.25
+		rectangle_y = 6.25
 	creature.collision_size = Vector2(rectangle_x, rectangle_y)
 	creature.collision_position = Vector2(hitbox_x, hitbox_y)
 	

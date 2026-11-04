@@ -3,10 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dqyu7ymy75hmw" path="res://assets/art/creatures/owl-cryptid/owl_cryptid-Sheet.png" id="1_lsvo6"]
 [ext_resource type="Texture2D" uid="uid://by5s53twtii0x" path="res://assets/art/creatures/owl/owl_regular-Sheet.png" id="2_lvvvx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wflwo"]
-atlas = ExtResource("1_lsvo6")
-region = Rect2(0, 0, 48, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6f7r"]
 atlas = ExtResource("1_lsvo6")
 region = Rect2(48, 0, 48, 48)
@@ -47,8 +43,8 @@ region = Rect2(432, 0, 48, 48)
 atlas = ExtResource("1_lsvo6")
 region = Rect2(480, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_colfo"]
-atlas = ExtResource("2_lvvvx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wflwo"]
+atlas = ExtResource("1_lsvo6")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1dt8"]
@@ -91,12 +87,13 @@ region = Rect2(432, 0, 48, 48)
 atlas = ExtResource("2_lvvvx")
 region = Rect2(480, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_colfo"]
+atlas = ExtResource("2_lvvvx")
+region = Rect2(0, 0, 48, 48)
+
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wflwo")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h6f7r")
 }, {
@@ -126,15 +123,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v3phk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wflwo")
 }],
 "loop": false,
 "name": &"cryptid",
 "speed": 8.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_colfo")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s1dt8")
 }, {
@@ -164,6 +161,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ddpwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_colfo")
 }],
 "loop": false,
 "name": &"normal",

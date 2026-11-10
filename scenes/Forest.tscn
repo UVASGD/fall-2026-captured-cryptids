@@ -16,6 +16,9 @@ shader_parameter/blur_amount = 1.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cghdb"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1qwms"]
+load_path = "res://.godot/imported/BG_Draft_1_Top_Layer.png-916a0274e94cd90a2d0899c3f730ecfc.ctex"
+
 [node name="GameRoot" type="Node2D" unique_id=1296171585]
 script = ExtResource("1_e0x3u")
 
@@ -93,7 +96,7 @@ scroll_scale = Vector2(0.95, 0.95)
 repeat_times = 10
 
 [node name="ForegroundLayer" type="Sprite2D" parent="Main Background/Parallax2D" unique_id=1815421001]
-texture = ExtResource("12_hpon2")
+texture = SubResource("CompressedTexture2D_1qwms")
 
 [node name="CreatureRoot" type="Node2D" parent="Main Background" unique_id=1254769416]
 

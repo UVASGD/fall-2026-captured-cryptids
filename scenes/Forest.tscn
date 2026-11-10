@@ -17,7 +17,6 @@ shader_parameter/blur_amount = 1.0
 [sub_resource type="CanvasTexture" id="CanvasTexture_cghdb"]
 
 [node name="GameRoot" type="Node2D" unique_id=1296171585]
-position = Vector2(-2, 0)
 script = ExtResource("1_e0x3u")
 
 [node name="MainCamera" parent="." unique_id=1470264754 node_paths=PackedStringArray("fade_rect", "main_background_node") instance=ExtResource("75_c8yhr")]
@@ -97,6 +96,8 @@ repeat_times = 10
 texture = ExtResource("12_hpon2")
 
 [node name="CreatureRoot" type="Node2D" parent="Main Background" unique_id=1254769416]
+
+[node name="ArtifactRoot" type="Node2D" parent="Main Background" unique_id=1563899023]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=316929755]
 stream = ExtResource("9_1qwms")

@@ -13,6 +13,7 @@ signal state_changed
 
 # Creature Scene
 const CREATURE_SCENE: PackedScene = preload("res://scenes/creature.tscn")
+const ARTIFACT_SCENE: PackedScene = preload("res://scenes/artifact.tscn")
 
 # Global camera progress
 var pictures_taken: int = 0
@@ -57,6 +58,10 @@ func _ready() -> void:
 	spawn_creature("mothbush", false, true, -546.0, 20.0)
 	spawn_creature("owl", false, false, -275.0, 25.0)
 	spawn_creature("owl", true, false, -400.0, 25.0)
+	
+	# Spawn Artifact parameters: Artifact Name, x, y
+	spawn_artifact("AudioRecorder", 0, 0)
+	spawn_artifact("Polaroid", 25, 0)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_pressed():
@@ -264,3 +269,17 @@ func spawn_creature(creature_name: String, cryptid: bool, close_up: bool, x: flo
 	
 	root.add_child(creature)
 	return creature
+
+func spawn_artifact(artifact_name: String, x: float, y: float) -> Artifact:
+	var root := get_tree().current_scene.find_child("ArtifactRoot", true, false)
+	if root == null:
+		return null
+	
+	var sprite_path := "res://assets/art/artifacts/" + artifact_name + ".png"
+	var artifact: Artifact = ARTIFACT_SCENE.instantiate()
+	artifact.artifact_name = artifact_name
+	artifact.texture = load(sprite_path)
+	artifact.position = Vector2(x, y)
+	
+	root.add_child(artifact)
+	return artifact

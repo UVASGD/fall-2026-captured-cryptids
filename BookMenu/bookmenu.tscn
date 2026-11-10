@@ -71,6 +71,7 @@ scale = Vector2(0.3008553, 0.28154972)
 texture_normal = ExtResource("3_d42ad")
 
 [node name="TableOfContents" type="Control" parent="." unique_id=811960900]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -78,10 +79,10 @@ offset_bottom = 40.0
 
 [node name="Animal 1" type="Button" parent="TableOfContents" unique_id=1150353382]
 layout_mode = 0
-offset_left = 474.0
-offset_top = 214.46739
-offset_right = 712.0
-offset_bottom = 459.799
+offset_left = 472.0
+offset_top = 216.0
+offset_right = 710.0
+offset_bottom = 461.3316
 rotation = -0.001963821
 text = "Animal 1"
 
@@ -182,7 +183,6 @@ text = "Artifacts 6
 "
 
 [node name="AnimalPage1" type="Control" parent="." unique_id=1761436742]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1020.56256
@@ -226,14 +226,21 @@ offset_bottom = 342.00006
 theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
-[node name="DeerPlaceholder" type="Sprite2D" parent="AnimalPage1" unique_id=2025114548]
-position = Vector2(-311.5625, -40.5)
+[node name="ShowImage1" type="Control" parent="AnimalPage1" unique_id=710358865]
+anchors_preset = 0
+offset_left = 6.1035156e-05
+offset_top = -6.1035156e-05
+offset_right = 40.00006
+offset_bottom = 39.99994
+
+[node name="DeerPlaceholder" type="Sprite2D" parent="AnimalPage1/ShowImage1" unique_id=2025114548]
+position = Vector2(-311.56256, -40.49994)
 scale = Vector2(0.3609831, 0.3601134)
 texture = ExtResource("3_kk17l")
 
-[node name="DeerPlaceholder2" type="Sprite2D" parent="AnimalPage1" unique_id=1669671104]
-position = Vector2(300.4375, -44.5)
-scale = Vector2(0.3609831, 0.3601134)
+[node name="DeerPlaceholder2" type="Sprite2D" parent="AnimalPage1/ShowImage1" unique_id=1669671104]
+position = Vector2(307.43738, -42.999886)
+scale = Vector2(0.31758833, 0.370983)
 texture = ExtResource("3_kk17l")
 
 [node name="AnimalPage2" type="Control" parent="." unique_id=1993627855]
@@ -244,17 +251,6 @@ offset_left = 2042.5625
 offset_top = 1253.0
 offset_right = 2082.5625
 offset_bottom = 1293.0
-
-[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage2" unique_id=201067088]
-visible = false
-position = Vector2(-1354.5625, -661)
-scale = Vector2(0.73039216, 0.62908494)
-texture = ExtResource("4_ma4mm")
-
-[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage2" unique_id=986861407]
-position = Vector2(-730.5625, -669)
-scale = Vector2(0.73039216, 0.62908494)
-texture = ExtResource("4_ma4mm")
 
 [node name="Label" type="Label" parent="AnimalPage2" unique_id=729000514]
 layout_mode = 0
@@ -292,6 +288,21 @@ offset_bottom = -273.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
+[node name="ShowImage2" type="Control" parent="AnimalPage2" unique_id=1573215896]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage2/ShowImage2" unique_id=986861407]
+position = Vector2(-1000.2333, -1063.4493)
+texture = ExtResource("4_ma4mm")
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage2/ShowImage2" unique_id=201067088]
+visible = false
+position = Vector2(-1354.5625, -661)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
 [node name="AnimalPage3" type="Control" parent="." unique_id=2045009200]
 visible = false
 layout_mode = 3
@@ -300,16 +311,6 @@ offset_left = 2042.5625
 offset_top = 1253.0
 offset_right = 2082.5625
 offset_bottom = 1293.0
-
-[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage3" unique_id=812887526]
-position = Vector2(-1354.5625, -661)
-scale = Vector2(0.73039216, 0.62908494)
-texture = ExtResource("4_ma4mm")
-
-[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage3" unique_id=1308216809]
-position = Vector2(-730.5625, -669)
-scale = Vector2(0.73039216, 0.62908494)
-texture = ExtResource("4_ma4mm")
 
 [node name="Label" type="Label" parent="AnimalPage3" unique_id=404647243]
 layout_mode = 0
@@ -347,6 +348,21 @@ offset_bottom = -273.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
+[node name="ShowImage3" type="Control" parent="AnimalPage3" unique_id=807125717]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage3/ShowImage3" unique_id=1958272218]
+position = Vector2(-1000.2333, -1063.4493)
+texture = ExtResource("4_ma4mm")
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage3/ShowImage3" unique_id=292176650]
+visible = false
+position = Vector2(-1354.5625, -661)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
 [node name="AnimalPage4" type="Control" parent="." unique_id=1581305201]
 visible = false
 layout_mode = 3
@@ -355,16 +371,6 @@ offset_left = 2042.5625
 offset_top = 1253.0
 offset_right = 2082.5625
 offset_bottom = 1293.0
-
-[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage4" unique_id=111765452]
-position = Vector2(-1354.5625, -661)
-scale = Vector2(0.73039216, 0.62908494)
-texture = ExtResource("4_ma4mm")
-
-[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage4" unique_id=1118129010]
-position = Vector2(-730.5625, -669)
-scale = Vector2(0.73039216, 0.62908494)
-texture = ExtResource("4_ma4mm")
 
 [node name="Label" type="Label" parent="AnimalPage4" unique_id=840363880]
 layout_mode = 0
@@ -402,6 +408,21 @@ offset_bottom = -273.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
+[node name="ShowImage4" type="Control" parent="AnimalPage4" unique_id=962297580]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage4/ShowImage4" unique_id=1653714368]
+position = Vector2(-1000.2333, -1063.4493)
+texture = ExtResource("4_ma4mm")
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage4/ShowImage4" unique_id=1552752564]
+visible = false
+position = Vector2(-1354.5625, -661)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
 [node name="AnimalPage5" type="Control" parent="." unique_id=1768465902]
 visible = false
 layout_mode = 3
@@ -410,16 +431,6 @@ offset_left = 2042.5625
 offset_top = 1253.0
 offset_right = 2082.5625
 offset_bottom = 1293.0
-
-[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage5" unique_id=1419676827]
-position = Vector2(-1354.5625, -661)
-scale = Vector2(0.73039216, 0.62908494)
-texture = ExtResource("4_ma4mm")
-
-[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage5" unique_id=1278399150]
-position = Vector2(-730.5625, -669)
-scale = Vector2(0.73039216, 0.62908494)
-texture = ExtResource("4_ma4mm")
 
 [node name="Label" type="Label" parent="AnimalPage5" unique_id=1187949547]
 layout_mode = 0
@@ -457,6 +468,21 @@ offset_bottom = -273.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
+[node name="ShowImage5" type="Control" parent="AnimalPage5" unique_id=1774910613]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage5/ShowImage5" unique_id=285870079]
+position = Vector2(-1000.2333, -1063.4493)
+texture = ExtResource("4_ma4mm")
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage5/ShowImage5" unique_id=990898231]
+visible = false
+position = Vector2(-1354.5625, -661)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
 [node name="AnimalPage6" type="Control" parent="." unique_id=1704067655]
 visible = false
 layout_mode = 3
@@ -465,16 +491,6 @@ offset_left = 2042.5625
 offset_top = 1253.0
 offset_right = 2082.5625
 offset_bottom = 1293.0
-
-[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage6" unique_id=1000902462]
-position = Vector2(-1354.5625, -661)
-scale = Vector2(0.73039216, 0.62908494)
-texture = ExtResource("4_ma4mm")
-
-[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage6" unique_id=95830331]
-position = Vector2(-730.5625, -669)
-scale = Vector2(0.73039216, 0.62908494)
-texture = ExtResource("4_ma4mm")
 
 [node name="Label" type="Label" parent="AnimalPage6" unique_id=1905024690]
 layout_mode = 0
@@ -512,6 +528,21 @@ offset_bottom = -273.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
+[node name="ShowImage6" type="Control" parent="AnimalPage6" unique_id=348890435]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage6/ShowImage6" unique_id=1263308544]
+position = Vector2(-1000.2333, -1063.4493)
+texture = ExtResource("4_ma4mm")
+
+[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage6/ShowImage6" unique_id=349558451]
+visible = false
+position = Vector2(-1354.5625, -661)
+scale = Vector2(0.73039216, 0.62908494)
+texture = ExtResource("4_ma4mm")
+
 [node name="ArtifactPage1" type="Control" parent="." unique_id=701620406]
 visible = false
 layout_mode = 3
@@ -537,7 +568,12 @@ offset_bottom = 426.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Name*"
 
-[node name="Images(2)" type="Sprite2D" parent="ArtifactPage1" unique_id=1454482340]
+[node name="ShowImage7" type="Control" parent="ArtifactPage1" unique_id=978759442]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Images(2)" type="Sprite2D" parent="ArtifactPage1/ShowImage7" unique_id=1454482340]
 position = Vector2(741, 627)
 scale = Vector2(0.65993786, 0.9978903)
 texture = ExtResource("6_ocmi6")
@@ -567,7 +603,12 @@ offset_bottom = 426.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Name*"
 
-[node name="Images(3)" type="Sprite2D" parent="ArtifactPage2" unique_id=152099284]
+[node name="ShowImage8" type="Control" parent="ArtifactPage2" unique_id=864346443]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Images(3)" type="Sprite2D" parent="ArtifactPage2/ShowImage8" unique_id=152099284]
 position = Vector2(688, 697)
 texture = ExtResource("7_u0pjj")
 
@@ -596,7 +637,12 @@ offset_bottom = 426.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Name*"
 
-[node name="Images(4)" type="Sprite2D" parent="ArtifactPage3" unique_id=581385971]
+[node name="ShowImage9" type="Control" parent="ArtifactPage3" unique_id=522952645]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Images(4)" type="Sprite2D" parent="ArtifactPage3/ShowImage9" unique_id=581385971]
 position = Vector2(741, 667)
 texture = ExtResource("8_3kt0u")
 
@@ -625,7 +671,12 @@ offset_bottom = 426.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Name*"
 
-[node name="Images(5)" type="Sprite2D" parent="ArtifactPage4" unique_id=1080240128]
+[node name="ShowImage10" type="Control" parent="ArtifactPage4" unique_id=1062707986]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Images(5)" type="Sprite2D" parent="ArtifactPage4/ShowImage10" unique_id=1080240128]
 position = Vector2(741, 667)
 texture = ExtResource("9_a2blu")
 
@@ -654,7 +705,12 @@ offset_bottom = 426.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Name*"
 
-[node name="Images(6)" type="Sprite2D" parent="ArtifactPage5" unique_id=1472391311]
+[node name="ShowImage11" type="Control" parent="ArtifactPage5" unique_id=49553214]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Images(6)" type="Sprite2D" parent="ArtifactPage5/ShowImage11" unique_id=1472391311]
 position = Vector2(755, 667)
 texture = ExtResource("10_rgyj1")
 
@@ -665,11 +721,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Images(7)" type="Sprite2D" parent="ArtifactPage6" unique_id=1797557280]
+[node name="ShowImage12" type="Control" parent="ArtifactPage6" unique_id=469859311]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Images(7)" type="Sprite2D" parent="ArtifactPage6/ShowImage12" unique_id=1797557280]
 position = Vector2(723, 610)
 texture = ExtResource("11_qih02")
 
-[node name="Label15" type="Label" parent="ArtifactPage6/Images(7)" unique_id=668659113]
+[node name="Label15" type="Label" parent="ArtifactPage6/ShowImage12/Images(7)" unique_id=668659113]
 offset_left = 398.0
 offset_top = 187.0
 offset_right = 851.0
@@ -677,13 +738,30 @@ offset_bottom = 370.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Lore*"
 
-[node name="Label16" type="Label" parent="ArtifactPage6/Images(7)" unique_id=907296002]
+[node name="Label16" type="Label" parent="ArtifactPage6/ShowImage12/Images(7)" unique_id=907296002]
 offset_left = -233.0
 offset_top = -302.0
 offset_right = 231.0
 offset_bottom = -184.0
 theme_override_font_sizes/font_size = 56
 text = "*Insert Name*"
+
+[node name="NoInfo" type="Control" parent="." unique_id=1845211074]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="NoInfo" unique_id=238212932]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 424.0
+offset_right = 616.0
+offset_bottom = 434.0
+rotation = -0.00012335692
+scale = Vector2(23.519386, 30.873259)
+text = "No Info :("
 
 [connection signal="pressed" from="Artifacts Tab" to="." method="_on_artifacts_tab_pressed"]
 [connection signal="pressed" from="Animal Tab" to="." method="_on_animal_tab_pressed"]

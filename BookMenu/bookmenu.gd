@@ -34,17 +34,19 @@ func show_table_of_contents() -> void:
 	_hide_all_pages()
 	table_of_contents.show()
 	page_traversal.hide()
+	$NoInfo.hide()
 
 func show_page(page_index: int) -> void:
-	if page_index < FIRST_PAGE or page_index > LAST_PAGE:
-		return
-	current_page = page_index
-	table_of_contents.hide()
 	_hide_all_pages()
+	current_page = page_index
+
 	pages[current_page].show()
+
+	var controller_name = "ShowImage" + str(page_index + 1)
+	
+	pages[current_page].get_node(controller_name).hide()
+	table_of_contents.hide()
 	page_traversal.show()
-	previous_button.visible = current_page != FIRST_PAGE
-	next_button.visible = current_page != LAST_PAGE
 
 func _hide_all_pages() -> void:
 	for page in pages:
@@ -64,6 +66,9 @@ func _on_next_pressed() -> void:
 #page flip function
 func _on_animal_1_pressed() -> void:
 	show_page(0)
+	if GameManager.recorded_creatures.has("deer"):
+		$AnimalPage1/ShowImage1.show()
+		
 
 func _on_animal_2_pressed() -> void:
 	show_page(1)

@@ -11,6 +11,7 @@ var pages: Array[Control] = []
 @onready var page_traversal: Control = $PageTraversal
 @onready var previous_button: BaseButton = $PageTraversal/Before
 @onready var next_button: BaseButton = $PageTraversal/Next
+@onready var controller_name = ""
 
 func _ready() -> void:
 	pages.assign([
@@ -42,7 +43,7 @@ func show_page(page_index: int) -> void:
 
 	pages[current_page].show()
 
-	var controller_name = "ShowImage" + str(page_index + 1)
+	controller_name = "ShowImage" + str(page_index + 1)
 	
 	pages[current_page].get_node(controller_name).hide()
 	table_of_contents.hide()
@@ -67,7 +68,8 @@ func _on_next_pressed() -> void:
 func _on_animal_1_pressed() -> void:
 	show_page(0)
 	if GameManager.recorded_creatures.has("deer"):
-		$AnimalPage1/ShowImage1.show()
+		pages[current_page].get_node(controller_name).show()
+		
 		
 
 func _on_animal_2_pressed() -> void:

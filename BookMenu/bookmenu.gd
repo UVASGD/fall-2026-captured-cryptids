@@ -3,6 +3,14 @@ extends Node2D
 const FIRST_PAGE := 0
 const LAST_PAGE := 11
 
+# Which creature unlocks the image on each page (by page index).
+# Add entries here as you add more creatures/artifacts.
+const PAGE_CREATURES := {
+	0: "deer",
+	1: "blackwalnut",
+	2: "palemoth",
+}
+
 var current_page := -1
 var pages: Array[Control] = []
 
@@ -11,22 +19,13 @@ var pages: Array[Control] = []
 @onready var page_traversal: Control = $PageTraversal
 @onready var previous_button: BaseButton = $PageTraversal/Before
 @onready var next_button: BaseButton = $PageTraversal/Next
-@onready var controller_name = ""
 
 func _ready() -> void:
 	pages.assign([
-		$AnimalPage1,
-		$AnimalPage2,
-		$AnimalPage3,
-		$AnimalPage4,
-		$AnimalPage5,
-		$AnimalPage6,
-		$ArtifactPage1,
-		$ArtifactPage2,
-		$ArtifactPage3,
-		$ArtifactPage4,
-		$ArtifactPage5,
-		$ArtifactPage6,
+		$AnimalPage1, $AnimalPage2, $AnimalPage3,
+		$AnimalPage4, $AnimalPage5, $AnimalPage6,
+		$ArtifactPage1, $ArtifactPage2, $ArtifactPage3,
+		$ArtifactPage4, $ArtifactPage5, $ArtifactPage6,
 	])
 	journal_placeholder.show()
 	show_table_of_contents()
@@ -40,14 +39,20 @@ func show_table_of_contents() -> void:
 func show_page(page_index: int) -> void:
 	_hide_all_pages()
 	current_page = page_index
+	var page := pages[current_page]
+	page.show()
 
-	pages[current_page].show()
+	var image := page.get_node_or_null("ShowImage" + str(page_index + 1))
+	if image:
+		image.visible = _is_page_unlocked(page_index)
 
-	controller_name = "ShowImage" + str(page_index + 1)
-	
-	pages[current_page].get_node(controller_name).hide()
 	table_of_contents.hide()
 	page_traversal.show()
+
+func _is_page_unlocked(page_index: int) -> bool:
+	if not PAGE_CREATURES.has(page_index):
+		return false
+	return GameManager.recorded_creatures.has(PAGE_CREATURES[page_index])
 
 func _hide_all_pages() -> void:
 	for page in pages:
@@ -64,50 +69,23 @@ func _on_next_pressed() -> void:
 	if current_page < LAST_PAGE:
 		show_page(current_page + 1)
 
-#page flip function
-func _on_animal_1_pressed() -> void:
-	show_page(0)
-	if GameManager.recorded_creatures.has("deer"):
-		pages[current_page].get_node(controller_name).show()
-		
-		
+# Table of contents buttons
+func _on_animal_1_pressed() -> void: show_page(0)
+func _on_animal_2_pressed() -> void: show_page(1)
+func _on_animal_3_pressed() -> void: show_page(2)
+func _on_animal_4_pressed() -> void: show_page(3)
+func _on_animal_5_pressed() -> void: show_page(4)
+func _on_animal_6_pressed() -> void: show_page(5)
+func _on_artifacts_1_pressed() -> void: show_page(6)
+func _on_artifacts_2_pressed() -> void: show_page(7)
+func _on_artifacts_3_pressed() -> void: show_page(8)
+func _on_artifacts_4_pressed() -> void: show_page(9)
+func _on_artifacts_5_pressed() -> void: show_page(10)
+func _on_artifacts_6_pressed() -> void: show_page(11)
 
-func _on_animal_2_pressed() -> void:
-	show_page(1)
-
-func _on_animal_3_pressed() -> void:
-	show_page(2)
-
-func _on_animal_4_pressed() -> void:
-	show_page(3)
-
-func _on_animal_5_pressed() -> void:
-	show_page(4)
-
-func _on_animal_6_pressed() -> void:
-	show_page(5)
-
-func _on_artifacts_1_pressed() -> void:
+# Tabs
+func _on_artifacts_tab_pressed() -> void:
 	show_page(6)
 
-func _on_artifacts_2_pressed() -> void:
-	show_page(7)
-
-func _on_artifacts_3_pressed() -> void:
-	show_page(8)
-
-func _on_artifacts_4_pressed() -> void:
-	show_page(9)
-
-func _on_artifacts_5_pressed() -> void:
-	show_page(10)
-
-func _on_artifacts_6_pressed() -> void:
-	show_page(11)
-
-#tabs code
-func _on_artifacts_tab_pressed() -> void:
-	show_page(7)
-	
 func _on_animal_tab_pressed() -> void:
 	show_page(0)

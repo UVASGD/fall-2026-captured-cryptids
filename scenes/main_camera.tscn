@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dlfbmln3nry5l" path="res://scripts/camera/main_cam.gd" id="1_nqrp4"]
 [ext_resource type="Script" uid="uid://dalovhlk2ocj" path="res://scripts/camera/camera.gd" id="2_h2pog"]
 [ext_resource type="Texture2D" uid="uid://cphs05ggyme04" path="res://assets/art/Camera_Placeholder.png" id="3_agi03"]
-[ext_resource type="Script" uid="uid://yuhx8a45cn2d" path="res://scenes/film_count.gd" id="4_hoovk"]
+[ext_resource type="Script" path="res://scenes/film_count.gd" id="4_hoovk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_05hq6"]
 animations = [{

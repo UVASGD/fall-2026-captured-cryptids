@@ -66,7 +66,7 @@ func _highlight_color() -> Color:
 	var value := 1.0 + brightness_modifier
 	return Color(value, value, value, 1.0)
 
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not GameManager.is_camera_open():
 		return
 	var camera = get_viewport().get_camera_2d()

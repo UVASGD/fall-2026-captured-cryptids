@@ -77,8 +77,8 @@ follow_viewport_enabled = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Main Background" unique_id=64193604]
 modulate = Color(0.24705882, 0.24705882, 0.24705882, 1)
-position = Vector2(-25, 0.5)
-scale = Vector2(961, 158)
+position = Vector2(-132.49986, 0.5)
+scale = Vector2(5069.0005, 158)
 texture = SubResource("CanvasTexture_cghdb")
 
 [node name="Parallax2D2" type="Parallax2D" parent="Main Background" unique_id=561889001]

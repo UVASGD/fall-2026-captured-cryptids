@@ -183,6 +183,7 @@ text = "Artifacts 6
 "
 
 [node name="AnimalPage1" type="Control" parent="." unique_id=1761436742]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1020.56256
@@ -294,11 +295,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage2/ShowImage2" unique_id=986861407]
-position = Vector2(-1000.2333, -1063.4493)
+position = Vector2(-758.5625, -681)
+scale = Vector2(0.88235307, 0.6666667)
 texture = ExtResource("4_ma4mm")
 
 [node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage2/ShowImage2" unique_id=201067088]
-visible = false
 position = Vector2(-1354.5625, -661)
 scale = Vector2(0.73039216, 0.62908494)
 texture = ExtResource("4_ma4mm")
@@ -354,17 +355,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage3/ShowImage3" unique_id=1958272218]
-position = Vector2(-1000.2333, -1063.4493)
-texture = ExtResource("4_ma4mm")
-
-[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage3/ShowImage3" unique_id=292176650]
-visible = false
-position = Vector2(-1354.5625, -661)
-scale = Vector2(0.73039216, 0.62908494)
+position = Vector2(-1338.5625, -669)
+scale = Vector2(0.75490195, 0.6830065)
 texture = ExtResource("4_ma4mm")
 
 [node name="AnimalPage4" type="Control" parent="." unique_id=1581305201]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 2042.5625
@@ -414,13 +409,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="AnimalPlaceholder2" type="Sprite2D" parent="AnimalPage4/ShowImage4" unique_id=1653714368]
-position = Vector2(-1000.2333, -1063.4493)
-texture = ExtResource("4_ma4mm")
-
-[node name="AnimalPlaceholder" type="Sprite2D" parent="AnimalPage4/ShowImage4" unique_id=1552752564]
-visible = false
-position = Vector2(-1354.5625, -661)
-scale = Vector2(0.73039216, 0.62908494)
+position = Vector2(-1346.5626, -669)
+scale = Vector2(0.82352936, 0.5620915)
 texture = ExtResource("4_ma4mm")
 
 [node name="AnimalPage5" type="Control" parent="." unique_id=1768465902]

@@ -3,6 +3,21 @@ extends Node
 ## The one source of truth for UI and gameplay state.
 ## UI scripts request changes here; no scene is allowed to set state flags directly.
 
+signal film_changed(remaining: int, max_film: int)
+
+var max_film := 24
+var film_remaining := 24:
+	set(value):
+		film_remaining = clampi(value, 0, max_film)
+		film_changed.emit(film_remaining, max_film)
+
+func can_take_photo() -> bool:
+	return film_remaining > 0
+
+func use_film() -> void:
+	film_remaining -= 1
+
+
 signal journal_visibility_requested(is_open: bool)
 signal pause_changed(is_open: bool)
 signal pause_settings_changed(is_open: bool)

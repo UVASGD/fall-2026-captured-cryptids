@@ -78,9 +78,16 @@ func _physics_process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if not (event is InputEventMouseButton and event.pressed):
 		return
-	print("Input")
 	if event.button_index != MOUSE_BUTTON_LEFT or not GameManager.can_capture_with_camera():
 		return
+
+	# Out of film: swallow the click so nothing is captured.
+	if not GameManager.can_take_photo():
+		get_viewport().set_input_as_handled()
+		return
+
+	GameManager.use_film()   # <-- NEW: costs one film per click
+
 	var creature := _target_creature()
 	if creature == null:
 		return

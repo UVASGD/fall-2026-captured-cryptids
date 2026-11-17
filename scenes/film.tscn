@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dx44it4bpamo3"]
+
+[ext_resource type="Script" uid="uid://btqndg3016tow" path="res://scenes/camera_frame.gd" id="1_0cfc6"]
+
+[node name="Film" type="CanvasLayer" unique_id=824569356]
+layer = 100
+follow_viewport_enabled = true
+
+[node name="CameraFrame" type="Control" parent="." unique_id=1178895025]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0cfc6")
+
+[node name="FilmCounter" type="RichTextLabel" parent="CameraFrame" unique_id=1674876378]
+z_index = 100
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "Test"

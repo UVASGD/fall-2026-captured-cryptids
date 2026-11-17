@@ -74,7 +74,6 @@ func _physics_process(_delta: float) -> void:
 		global_position = camera.get_global_mouse_position()
 	_refresh_highlight()
 
-# _input, not _unhandled_input: a stray Control over a creature must never swallow captures.
 func _input(event: InputEvent) -> void:
 	if not (event is InputEventMouseButton and event.pressed):
 		return
@@ -86,10 +85,10 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		return
 
-	GameManager.use_film()   # <-- NEW: costs one film per click
-
 	var creature := _target_creature()
 	if creature == null:
-		return
+		return   # clicked empty space: no film used
+
+	GameManager.use_film()   # only reached when a creature is in frame
 	creature._when_clicked()
 	get_viewport().set_input_as_handled()
